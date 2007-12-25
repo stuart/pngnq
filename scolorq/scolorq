@@ -1,0 +1,2 @@
+#!/bin/bash
+convert $1 $1.rgb && time ./spatial_color_quant $1.rgb $2 $3 $4 $5.rgb $6 $7 && rm $1.rgb && convert -colors $4 -depth 8 -size $2x$3 rgb:$5.rgb $5 && rm $5.rgb && pngcrush -brute $5 $5.temp && cp $5.temp $5 && rm $5.temp

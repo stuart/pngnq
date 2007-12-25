@@ -1,0 +1,59 @@
+\" Process this file with
+.\" groff -man -Tascii foo.1
+.\"
+.TH PNGNQ 1 "NOVEMBER 2007" Linux "User Manuals"
+.SH NAME
+pngnq \- quantize png images
+.SH SYNOPSIS
+.B pngnq [-vfhV][-s 
+.I sample_factor
+.B ][-e 
+.I extension 
+.B ][-d 
+.I dir
+.B ][-n 
+.I colors
+.B][
+.I inputfiles
+.B]
+.SH DESCRIPTION
+.B pngnq
+Quantizes a 32-bit RGBA PNG image to an 8 bit RGBA palette PNG 
+using the neuquant algorithm. The output file name is the 
+input file name extended with "-nq8.png" or a specified extension.
+
+.SH OPTIONS
+.IP -v
+Verbose mode. Prints status messages.
+.IP -f
+Force ovewriting of files.
+.IP "-s sample factor"
+Sample factor. The neuquant algorithm samples pixels stepping by this value.
+The default value of 3 gives good results. Higher values sample less 
+of the image pixels and thus are faster but less accurate. A factor of 1 samples
+every image pixel. 
+.IP "-n colors"
+Specifies the number of colors to quantize to. Defaults to 256 which is the maximum.
+The minimum here is 2. 
+.IP "-e extension"
+Specifies the new filename extension. Defaults to "-nq8.png". 
+Pngnq drops .png from the original filenames. If you set the argument of the -e option
+to .png and choose the -f option the input file will be overwritten. 
+.IP "-d dir"
+Tells pngnq to put output files in a directory other than the one the input files 
+are in. 
+.IP "input files"
+The png files to be processed. Defaults to standard input if not specified.
+If standard input is being processed the output is sent to standard output. 
+.IP -h
+Print program help.
+.IP -V
+Print version number and library versions.
+
+.SH BUGS
+None known at this time.
+
+.SH AUTHOR
+Stuart Coyle <stuart@cybertherial.com>
+.SH "SEE ALSO"
+.BR png(5)
