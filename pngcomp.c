@@ -43,6 +43,7 @@ The error is calculated as the linear distance between two colors in RGBA space.
 #include <ctype.h>
 
 #include "png.h"
+#include "config.h"
 #include "rwpng.h"
 #include "colorspace.h" 
 

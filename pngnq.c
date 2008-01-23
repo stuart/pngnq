@@ -68,8 +68,9 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <time.h>
+#ifdef HAS_HEADER_VALGRIND
 #include <valgrind/callgrind.h>
-
+#endif
 #ifdef WIN32
 #include "freegetopt/getopt.h"
 #endif
@@ -87,6 +88,7 @@
 #endif  
 
 #include "png.h"
+#include "config.h"             
 #include "neuquant32.h"
 #include "rwpng.h"
 #include "errors.h"

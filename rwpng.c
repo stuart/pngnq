@@ -545,9 +545,6 @@ int rwpng_write_image_finish(mainprog_info *mainprog_ptr)
 }
 
 
-
-
-
 static void rwpng_error_handler(png_structp png_ptr, png_const_charp msg)
 {
     mainprog_info  *mainprog_ptr;
