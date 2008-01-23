@@ -1,0 +1,4 @@
+autoscan: warning: missing AC_PROG_CXX wanted by: 
+	scolorq/spatial_color_quant.cpp
+	scolorq/Makefile:7
+	scolorq/Makefile:10
