@@ -50,6 +50,13 @@ This program has been tested on:
 	OpenBSD 32 bit
 	Win32
 
+REQUIREMENTS:
+	Pngnq depends on the libpng and libz libraries.
+	You will need libpng 1.2.8 installed. 
+	If you have this then you will have libz. 
+        On windows you will require the libpng13.dll 
+	which can be downloaded from several sites.
+
 TODO list:
 
 	I want to change the error measure to use CIE u' v' color

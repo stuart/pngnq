@@ -9,6 +9,7 @@ AC_CHECK_PROG([HAS_LIBPNG_CONFIG],[libpng-config],[1])
 
 # checks for libraries
 
+
 # checks for header files
 AC_CHECK_HEADERS([ctype.h])
 AC_CHECK_HEADERS([sys/stat.h])
@@ -32,7 +33,6 @@ AC_CHECK_FUNCS([pow])
 AC_CHECK_FUNCS([sqrt])
 AC_CHECK_FUNCS([strchr])
 AC_CHECK_FUNCS([strrchr])
-
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([Makefile])
