@@ -46,7 +46,7 @@
   usage:  pngnq [-vfhV][-n colours][input files]\n\
           use -h for more help and options.\n"
 #define PNGNQ_HELP "\
-  usage:  pngnq [-vfhV][-e extension][-d dir][-s sample factor][-n colours][input files]\n\
+  usage:  pngnq [-vfhLV][-e extension][-d dir][-s sample factor][-n colours][input files]\n\
   options:\n\
      -v Verbose mode. Prints status messages.\n\
      -f Force ovewriting of files.\n\
@@ -55,6 +55,7 @@
      input files: The png files to be processed. Defaults to standard input if not specified.\n\n\
      -e Specify the new extension for quantized files. Default -nq8.png\n\
      -d Directory to put quantized images into.\n\
+     -L Do the quantization in the CIE Luv colorspace.\n\
      -V Print version number and library versions.\n\
      -h Print this help.\n\n\
   Quantizes a 32-bit RGBA PNG image to an 8 bit RGBA palette PNG\n\
@@ -92,6 +93,7 @@
 #include "neuquant32.h"
 #include "rwpng.h"
 #include "errors.h"
+#include "colorspace.h"
 
 typedef struct {
   uch r, g, b, a;
@@ -103,12 +105,13 @@ static mainprog_info rwpng_info;
 
 static int pngnq(char* filename, char* newext, char* dir,
 		 int sample_factor, int n_colors, int verbose,  
-		 int using_stdin, int force);
+		 int using_stdin, int force, int LUV_colorspace);
 
 int main(int argc, char** argv)
 {
   int verbose = 0;
   int force = 0;
+  int LUVcolorspace = 0;
   int sample_factor = 3; /* This is a reasonable default */
 
   char *input_file_name = NULL;
@@ -123,7 +126,7 @@ int main(int argc, char** argv)
   int n_colours = 256; /* number of colours to quantize to. Default 256 */
 
   /* Parse arguments */
-  while((c = getopt(argc,argv,"hVvfn:s:d:e:"))!=-1){
+  while((c = getopt(argc,argv,"hLVvfn:s:d:e:"))!=-1){
     switch(c){
     case 's':
       sample_factor = atoi(optarg);
@@ -133,6 +136,9 @@ int main(int argc, char** argv)
       break;
     case 'f':
       force = 1;
+      break;
+    case 'L':
+      LUVcolorspace = 1;
       break;
     case 'V':
       fprintf(stderr, "pngnq %s\n",VERSION);
@@ -200,7 +206,7 @@ int main(int argc, char** argv)
     }
 		
     retval = pngnq(input_file_name, output_file_extension, output_directory,
-		   sample_factor, n_colours, verbose, using_stdin,force);
+		   sample_factor, n_colours, verbose, using_stdin, force, LUVcolorspace);
 
     if(retval){ 
       errors++;
@@ -232,6 +238,8 @@ int main(int argc, char** argv)
 char *create_output_name(char *infilename, char* newext, char *newdir){
 
   char *outname = NULL;
+  char *outdir = NULL;
+
   int fn_len, ext_len, dir_len = 0;
   char *loc;
 
@@ -255,9 +263,21 @@ char *create_output_name(char *infilename, char* newext, char *newdir){
       dir_len = 0;
       newdir=NULL;
     }
+    /* make a local copy of the directory name */
+    outdir = malloc(FNMAX);
+    if(!outdir){
+	fprintf(stderr,
+		"  error:  out of memory, cannot allocate output directory name\n");
+	fflush(stderr);
+	exit(EXIT_FAILURE);
+    }
+
+    strncpy(outdir,newdir,dir_len);
+	    
   }
 
-  if(newdir){
+
+  if(outdir){
     /* find the last directory separator */
     loc = strrchr(infilename, DIR_SEPARATOR_CHAR);
     if(loc){
@@ -266,13 +286,13 @@ char *create_output_name(char *infilename, char* newext, char *newdir){
       fn_len = strlen(infilename);
     }
 	 
-    /* add a separator to newdir if needed */
-    if(newdir && newdir[dir_len] != DIR_SEPARATOR_CHAR){
-      strncpy(newdir+dir_len,DIR_SEPARATOR_STR,1);
+    /* add a separator to newdir if needed */    
+    if(outdir && outdir[dir_len-1] != DIR_SEPARATOR_CHAR){
+      strncpy(outdir+dir_len,DIR_SEPARATOR_STR,1);
       dir_len++;
     }
     /* copy new directory name to output */
-    strncpy(outname,newdir,dir_len);
+    strncpy(outname,outdir,dir_len);
   }
 
   if (fn_len > FNMAX-ext_len-dir_len) {
@@ -315,7 +335,7 @@ void free_rwpng_info() {
 
 static int pngnq(char* filename, char* newext, char* newdir, 
 		 int sample_factor, int n_colours, int verbose, 
-		 int using_stdin, int force)
+		 int using_stdin, int force, int LUVcolorspace)
 {
   char *outname = NULL;
   FILE *infile = NULL;
@@ -417,12 +437,22 @@ static int pngnq(char* filename, char* newext, char* newdir,
       fprintf(stderr,"  no pixel data found.");
     }
 
+  /* Colorspace convert */
+  if(LUVcolorspace){
+	  rgba2luva_block((unsigned char*)rwpng_info.rgba_data,rows*cols*4);
+  };
+
   /* Start neuquant */
   initnet((unsigned char*)rwpng_info.rgba_data,rows*cols*4,sample_factor,newcolors);
   learn(verbose);
   unbiasnet();
   getcolormap((unsigned char*)map);
   inxbuild(); 
+
+  /* Colorspace convert back */
+  if(LUVcolorspace){
+	  luva2rgba_block((unsigned char*)map,newcolors);
+  };
 
   /* Remap indexes so all tRNS chunks are together */
   if (verbose) {
@@ -478,8 +508,7 @@ static int pngnq(char* filename, char* newext, char* newdir,
       x++;
      }
      } 
-  
-  /* Remap and make palette entries */
+   /* Remap and make palette entries */
   for (x = 0; x < newcolors; ++x) {
     rwpng_info.palette[remap[x]].red  = map[x][0];
     rwpng_info.palette[remap[x]].green = map[x][1];
