@@ -1,0 +1,1824 @@
+
+*********************************************
+Comparing ./images/basi0g01.png to ./images/basi0g01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi0g02.png to ./images/basi0g02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.150540 
+Maximum pixel color error: 1.732051 
+Standard Deviation of error: 0.015248
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 935
+Percentage correct pixels: 91.308594
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.230038 
+Maximum block color error: 1.732051 
+Standard Deviation of block error: 0.036738
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi0g04.png to ./images/basi0g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.206358 
+Maximum pixel color error: 6.928203 
+Standard Deviation of error: 0.025510
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 932
+Percentage correct pixels: 91.015625
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.392418 
+Maximum block color error: 6.928203 
+Standard Deviation of block error: 0.069283
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi0g16.png to ./images/basi0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.206358 
+Maximum pixel color error: 13.856406 
+Standard Deviation of error: 0.023889
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 920
+Percentage correct pixels: 89.843750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.290930 
+Maximum block color error: 6.928203 
+Standard Deviation of block error: 0.050530
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi2c16.png to ./images/basi2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi3p01.png to ./images/basi3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi3p02.png to ./images/basi3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi3p04.png to ./images/basi3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.103570 
+Maximum pixel color error: 6.708204 
+Standard Deviation of error: 0.023981
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 999
+Percentage correct pixels: 97.558594
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.146645 
+Maximum block color error: 6.708204 
+Standard Deviation of block error: 0.059176
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi4a16.png to ./images/basi4a16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 11.161073 
+Maximum pixel color error: 427.816559 
+Standard Deviation of error: 1.380669
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 690
+Percentage correct pixels: 67.382812
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 14.044617 
+Maximum block color error: 427.816559 
+Standard Deviation of block error: 2.775683
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basi6a16.png to ./images/basi6a16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 18.708483 
+Maximum pixel color error: 255.000000 
+Standard Deviation of error: 1.297424
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 684
+Percentage correct pixels: 66.796875
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 25.256695 
+Maximum block color error: 255.000000 
+Standard Deviation of block error: 2.645758
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn0g01.png to ./images/basn0g01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn0g02.png to ./images/basn0g02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.150540 
+Maximum pixel color error: 1.732051 
+Standard Deviation of error: 0.015248
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 935
+Percentage correct pixels: 91.308594
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.230038 
+Maximum block color error: 1.732051 
+Standard Deviation of block error: 0.036738
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn0g04.png to ./images/basn0g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.206358 
+Maximum pixel color error: 6.928203 
+Standard Deviation of error: 0.025510
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 932
+Percentage correct pixels: 91.015625
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.392418 
+Maximum block color error: 6.928203 
+Standard Deviation of block error: 0.069283
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn0g16.png to ./images/basn0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.206358 
+Maximum pixel color error: 13.856406 
+Standard Deviation of error: 0.023889
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 920
+Percentage correct pixels: 89.843750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.290930 
+Maximum block color error: 6.928203 
+Standard Deviation of block error: 0.050530
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn2c16.png to ./images/basn2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn3p01.png to ./images/basn3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn3p02.png to ./images/basn3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn3p04.png to ./images/basn3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.103570 
+Maximum pixel color error: 6.708204 
+Standard Deviation of error: 0.023981
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 999
+Percentage correct pixels: 97.558594
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.146645 
+Maximum block color error: 6.708204 
+Standard Deviation of block error: 0.059176
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn4a16.png to ./images/basn4a16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 11.161073 
+Maximum pixel color error: 427.816559 
+Standard Deviation of error: 1.380669
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 690
+Percentage correct pixels: 67.382812
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 14.044617 
+Maximum block color error: 427.816559 
+Standard Deviation of block error: 2.775683
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/basn6a16.png to ./images/basn6a16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 18.708483 
+Maximum pixel color error: 255.000000 
+Standard Deviation of error: 1.297424
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 684
+Percentage correct pixels: 66.796875
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 25.256695 
+Maximum block color error: 255.000000 
+Standard Deviation of block error: 2.645758
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/bgai4a16.png to ./images/bgai4a16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 11.161073 
+Maximum pixel color error: 427.816559 
+Standard Deviation of error: 1.380669
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 690
+Percentage correct pixels: 67.382812
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 14.044617 
+Maximum block color error: 427.816559 
+Standard Deviation of block error: 2.775683
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/bgan6a16.png to ./images/bgan6a16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 18.708483 
+Maximum pixel color error: 255.000000 
+Standard Deviation of error: 1.297424
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 684
+Percentage correct pixels: 66.796875
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 25.256695 
+Maximum block color error: 255.000000 
+Standard Deviation of block error: 2.645758
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/bggn4a16.png to ./images/bggn4a16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 11.161073 
+Maximum pixel color error: 427.816559 
+Standard Deviation of error: 1.380669
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 690
+Percentage correct pixels: 67.382812
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 14.044617 
+Maximum block color error: 427.816559 
+Standard Deviation of block error: 2.775683
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/bgyn6a16.png to ./images/bgyn6a16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 18.708483 
+Maximum pixel color error: 255.000000 
+Standard Deviation of error: 1.297424
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 684
+Percentage correct pixels: 66.796875
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 25.256695 
+Maximum block color error: 255.000000 
+Standard Deviation of block error: 2.645758
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/ch1n3p04.png to ./images/ch1n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.103570 
+Maximum pixel color error: 6.708204 
+Standard Deviation of error: 0.023981
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 999
+Percentage correct pixels: 97.558594
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.146645 
+Maximum block color error: 6.708204 
+Standard Deviation of block error: 0.059176
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/cm0n0g04.png to ./images/cm0n0g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.016915 
+Maximum pixel color error: 3.464102 
+Standard Deviation of error: 0.006307
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1016
+Percentage correct pixels: 99.218750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.040595 
+Maximum block color error: 3.464102 
+Standard Deviation of block error: 0.018968
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/cm7n0g04.png to ./images/cm7n0g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.016915 
+Maximum pixel color error: 3.464102 
+Standard Deviation of error: 0.006307
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1016
+Percentage correct pixels: 99.218750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.040595 
+Maximum block color error: 3.464102 
+Standard Deviation of block error: 0.018968
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/cm9n0g04.png to ./images/cm9n0g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.016915 
+Maximum pixel color error: 3.464102 
+Standard Deviation of error: 0.006307
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1016
+Percentage correct pixels: 99.218750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.040595 
+Maximum block color error: 3.464102 
+Standard Deviation of block error: 0.018968
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/cs3n2c16.png to ./images/cs3n2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.353567 
+Maximum pixel color error: 10.816654 
+Standard Deviation of error: 0.027396
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 835
+Percentage correct pixels: 81.542969
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.749284 
+Maximum block color error: 10.816654 
+Standard Deviation of block error: 0.081403
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/ct0n0g04.png to ./images/ct0n0g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.016915 
+Maximum pixel color error: 3.464102 
+Standard Deviation of error: 0.006307
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1016
+Percentage correct pixels: 99.218750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.040595 
+Maximum block color error: 3.464102 
+Standard Deviation of block error: 0.018968
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/ct1n0g04.png to ./images/ct1n0g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.016915 
+Maximum pixel color error: 3.464102 
+Standard Deviation of error: 0.006307
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1016
+Percentage correct pixels: 99.218750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.040595 
+Maximum block color error: 3.464102 
+Standard Deviation of block error: 0.018968
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/ctzn0g04.png to ./images/ctzn0g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.016915 
+Maximum pixel color error: 3.464102 
+Standard Deviation of error: 0.006307
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1016
+Percentage correct pixels: 99.218750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.040595 
+Maximum block color error: 3.464102 
+Standard Deviation of block error: 0.018968
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g03n0g16.png to ./images/g03n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.274016 
+Maximum pixel color error: 1.732051 
+Standard Deviation of error: 0.019752
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 862
+Percentage correct pixels: 84.179688
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.419481 
+Maximum block color error: 1.732051 
+Standard Deviation of block error: 0.046376
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g03n3p04.png to ./images/g03n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.227697 
+Maximum pixel color error: 1.414214 
+Standard Deviation of error: 0.015774
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 848
+Percentage correct pixels: 82.812500
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.320800 
+Maximum block color error: 1.414214 
+Standard Deviation of block error: 0.036152
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g04n0g16.png to ./images/g04n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.270633 
+Maximum pixel color error: 1.732051 
+Standard Deviation of error: 0.019653
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 864
+Percentage correct pixels: 84.375000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.460076 
+Maximum block color error: 1.732051 
+Standard Deviation of block error: 0.047812
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g04n3p04.png to ./images/g04n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.006836 
+Maximum pixel color error: 1.000000 
+Standard Deviation of error: 0.002575
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1017
+Percentage correct pixels: 99.316406
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g05n0g16.png to ./images/g05n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.120093 
+Maximum pixel color error: 1.732051 
+Standard Deviation of error: 0.013749
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 953
+Percentage correct pixels: 93.066406
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.142082 
+Maximum block color error: 1.732051 
+Standard Deviation of block error: 0.029706
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g05n3p04.png to ./images/g05n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.054728 
+Maximum pixel color error: 1.414214 
+Standard Deviation of error: 0.007747
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 975
+Percentage correct pixels: 95.214844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.050111 
+Maximum block color error: 1.414214 
+Standard Deviation of block error: 0.014276
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g07n0g16.png to ./images/g07n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.113328 
+Maximum pixel color error: 1.732051 
+Standard Deviation of error: 0.013385
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 957
+Percentage correct pixels: 93.457031
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.135316 
+Maximum block color error: 1.732051 
+Standard Deviation of block error: 0.029052
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g07n3p04.png to ./images/g07n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.023478 
+Maximum pixel color error: 1.414214 
+Standard Deviation of error: 0.005647
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1007
+Percentage correct pixels: 98.339844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.011049 
+Maximum block color error: 1.414214 
+Standard Deviation of block error: 0.007782
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g10n0g16.png to ./images/g10n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.093030 
+Maximum pixel color error: 1.732051 
+Standard Deviation of error: 0.012203
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 969
+Percentage correct pixels: 94.628906
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.135316 
+Maximum block color error: 1.732051 
+Standard Deviation of block error: 0.029052
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g10n3p04.png to ./images/g10n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g25n0g16.png to ./images/g25n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.089647 
+Maximum pixel color error: 1.732051 
+Standard Deviation of error: 0.011991
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 971
+Percentage correct pixels: 94.824219
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.155614 
+Maximum block color error: 1.732051 
+Standard Deviation of block error: 0.030956
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/g25n3p04.png to ./images/g25n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.079102 
+Maximum pixel color error: 1.000000 
+Standard Deviation of error: 0.008434
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 943
+Percentage correct pixels: 92.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.140625 
+Maximum block color error: 1.000000 
+Standard Deviation of block error: 0.021727
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/oi1n0g16.png to ./images/oi1n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.206358 
+Maximum pixel color error: 13.856406 
+Standard Deviation of error: 0.023889
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 920
+Percentage correct pixels: 89.843750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.290930 
+Maximum block color error: 6.928203 
+Standard Deviation of block error: 0.050530
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/oi1n2c16.png to ./images/oi1n2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/oi2n0g16.png to ./images/oi2n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.206358 
+Maximum pixel color error: 13.856406 
+Standard Deviation of error: 0.023889
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 920
+Percentage correct pixels: 89.843750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.290930 
+Maximum block color error: 6.928203 
+Standard Deviation of block error: 0.050530
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/oi2n2c16.png to ./images/oi2n2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/oi4n0g16.png to ./images/oi4n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.206358 
+Maximum pixel color error: 13.856406 
+Standard Deviation of error: 0.023889
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 920
+Percentage correct pixels: 89.843750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.290930 
+Maximum block color error: 6.928203 
+Standard Deviation of block error: 0.050530
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/oi4n2c16.png to ./images/oi4n2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/oi9n0g16.png to ./images/oi9n0g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.206358 
+Maximum pixel color error: 13.856406 
+Standard Deviation of error: 0.023889
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 920
+Percentage correct pixels: 89.843750
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.290930 
+Maximum block color error: 6.928203 
+Standard Deviation of block error: 0.050530
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/oi9n2c16.png to ./images/oi9n2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/pngsuite_logo.png to ./images/pngsuite_logo-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 1.799419 
+Maximum pixel color error: 47.686478 
+Standard Deviation of error: 0.014575
+Image Dimensions 256 x 256 
+Number of pixels: 65536 
+Number of exact pixels: 48866
+Percentage correct pixels: 74.563599
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 2.857541 
+Maximum block color error: 47.686478 
+Standard Deviation of block error: 0.034653
+Total number of blocks: 16384
+*********************************************
+
+*********************************************
+Comparing ./images/pp0n2c16.png to ./images/pp0n2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/ps1n2c16.png to ./images/ps1n2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/ps2n2c16.png to ./images/ps2n2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 5.150051 
+Maximum pixel color error: 55.937466 
+Standard Deviation of error: 0.285220
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 687
+Percentage correct pixels: 67.089844
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 7.858875 
+Maximum block color error: 40.360870 
+Standard Deviation of block error: 0.656505
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/s01i3p01.png to ./images/s01i3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 1 x 1 
+Number of pixels: 1 
+Number of exact pixels: 1
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: nan 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: nan
+Total number of blocks: 0
+*********************************************
+
+*********************************************
+Comparing ./images/s01n3p01.png to ./images/s01n3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 1 x 1 
+Number of pixels: 1 
+Number of exact pixels: 1
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: nan 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: nan
+Total number of blocks: 0
+*********************************************
+
+*********************************************
+Comparing ./images/s02i3p01.png to ./images/s02i3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 2 x 2 
+Number of pixels: 4 
+Number of exact pixels: 4
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 1
+*********************************************
+
+*********************************************
+Comparing ./images/s02n3p01.png to ./images/s02n3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 2 x 2 
+Number of pixels: 4 
+Number of exact pixels: 4
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 1
+*********************************************
+
+*********************************************
+Comparing ./images/s03i3p01.png to ./images/s03i3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.555556 
+Maximum pixel color error: 5.000000 
+Standard Deviation of error: 0.523783
+Image Dimensions 3 x 3 
+Number of pixels: 9 
+Number of exact pixels: 8
+Percentage correct pixels: 88.888890
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 2
+*********************************************
+
+*********************************************
+Comparing ./images/s03n3p01.png to ./images/s03n3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.555556 
+Maximum pixel color error: 5.000000 
+Standard Deviation of error: 0.523783
+Image Dimensions 3 x 3 
+Number of pixels: 9 
+Number of exact pixels: 8
+Percentage correct pixels: 88.888890
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 2
+*********************************************
+
+*********************************************
+Comparing ./images/s04i3p01.png to ./images/s04i3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 4 x 4 
+Number of pixels: 16 
+Number of exact pixels: 16
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 4
+*********************************************
+
+*********************************************
+Comparing ./images/s04n3p01.png to ./images/s04n3p01-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 4 x 4 
+Number of pixels: 16 
+Number of exact pixels: 16
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 4
+*********************************************
+
+*********************************************
+Comparing ./images/s05i3p02.png to ./images/s05i3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 5 x 5 
+Number of pixels: 25 
+Number of exact pixels: 25
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 6
+*********************************************
+
+*********************************************
+Comparing ./images/s05n3p02.png to ./images/s05n3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 5 x 5 
+Number of pixels: 25 
+Number of exact pixels: 25
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 6
+*********************************************
+
+*********************************************
+Comparing ./images/s06i3p02.png to ./images/s06i3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.500000 
+Maximum pixel color error: 9.000000 
+Standard Deviation of error: 0.343592
+Image Dimensions 6 x 6 
+Number of pixels: 36 
+Number of exact pixels: 34
+Percentage correct pixels: 94.444442
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 9
+*********************************************
+
+*********************************************
+Comparing ./images/s06n3p02.png to ./images/s06n3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.500000 
+Maximum pixel color error: 9.000000 
+Standard Deviation of error: 0.343592
+Image Dimensions 6 x 6 
+Number of pixels: 36 
+Number of exact pixels: 34
+Percentage correct pixels: 94.444442
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 9
+*********************************************
+
+*********************************************
+Comparing ./images/s07i3p02.png to ./images/s07i3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 2.746624 
+Maximum pixel color error: 134.584549 
+Standard Deviation of error: 2.718452
+Image Dimensions 7 x 7 
+Number of pixels: 49 
+Number of exact pixels: 48
+Percentage correct pixels: 97.959185
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 12
+*********************************************
+
+*********************************************
+Comparing ./images/s07n3p02.png to ./images/s07n3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 2.746624 
+Maximum pixel color error: 134.584549 
+Standard Deviation of error: 2.718452
+Image Dimensions 7 x 7 
+Number of pixels: 49 
+Number of exact pixels: 48
+Percentage correct pixels: 97.959185
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 12
+*********************************************
+
+*********************************************
+Comparing ./images/s08i3p02.png to ./images/s08i3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 1.375000 
+Maximum pixel color error: 39.000000 
+Standard Deviation of error: 0.847359
+Image Dimensions 8 x 8 
+Number of pixels: 64 
+Number of exact pixels: 57
+Percentage correct pixels: 89.062500
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 2.687500 
+Maximum block color error: 39.000000 
+Standard Deviation of block error: 2.349732
+Total number of blocks: 16
+*********************************************
+
+*********************************************
+Comparing ./images/s08n3p02.png to ./images/s08n3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 1.375000 
+Maximum pixel color error: 39.000000 
+Standard Deviation of error: 0.847359
+Image Dimensions 8 x 8 
+Number of pixels: 64 
+Number of exact pixels: 57
+Percentage correct pixels: 89.062500
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 2.687500 
+Maximum block color error: 39.000000 
+Standard Deviation of block error: 2.349732
+Total number of blocks: 16
+*********************************************
+
+*********************************************
+Comparing ./images/s09i3p02.png to ./images/s09i3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.098765 
+Maximum pixel color error: 2.000000 
+Standard Deviation of error: 0.048148
+Image Dimensions 9 x 9 
+Number of pixels: 81 
+Number of exact pixels: 77
+Percentage correct pixels: 95.061731
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.100000 
+Maximum block color error: 2.000000 
+Standard Deviation of block error: 0.097468
+Total number of blocks: 20
+*********************************************
+
+*********************************************
+Comparing ./images/s09n3p02.png to ./images/s09n3p02-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.098765 
+Maximum pixel color error: 2.000000 
+Standard Deviation of error: 0.048148
+Image Dimensions 9 x 9 
+Number of pixels: 81 
+Number of exact pixels: 77
+Percentage correct pixels: 95.061731
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.100000 
+Maximum block color error: 2.000000 
+Standard Deviation of block error: 0.097468
+Total number of blocks: 20
+*********************************************
+
+*********************************************
+Comparing ./images/s32i3p04.png to ./images/s32i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/s32n3p04.png to ./images/s32n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 1024
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/s33i3p04.png to ./images/s33i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 33 x 33 
+Number of pixels: 1089 
+Number of exact pixels: 1089
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 272
+*********************************************
+
+*********************************************
+Comparing ./images/s33n3p04.png to ./images/s33n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 33 x 33 
+Number of pixels: 1089 
+Number of exact pixels: 1089
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 272
+*********************************************
+
+*********************************************
+Comparing ./images/s34i3p04.png to ./images/s34i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 34 x 34 
+Number of pixels: 1156 
+Number of exact pixels: 1156
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 289
+*********************************************
+
+*********************************************
+Comparing ./images/s34n3p04.png to ./images/s34n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 34 x 34 
+Number of pixels: 1156 
+Number of exact pixels: 1156
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 289
+*********************************************
+
+*********************************************
+Comparing ./images/s35i3p04.png to ./images/s35i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 35 x 35 
+Number of pixels: 1225 
+Number of exact pixels: 1225
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 306
+*********************************************
+
+*********************************************
+Comparing ./images/s35n3p04.png to ./images/s35n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 35 x 35 
+Number of pixels: 1225 
+Number of exact pixels: 1225
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 306
+*********************************************
+
+*********************************************
+Comparing ./images/s36i3p04.png to ./images/s36i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 36 x 36 
+Number of pixels: 1296 
+Number of exact pixels: 1296
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 324
+*********************************************
+
+*********************************************
+Comparing ./images/s36n3p04.png to ./images/s36n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 36 x 36 
+Number of pixels: 1296 
+Number of exact pixels: 1296
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 324
+*********************************************
+
+*********************************************
+Comparing ./images/s37i3p04.png to ./images/s37i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 37 x 37 
+Number of pixels: 1369 
+Number of exact pixels: 1369
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 342
+*********************************************
+
+*********************************************
+Comparing ./images/s37n3p04.png to ./images/s37n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 37 x 37 
+Number of pixels: 1369 
+Number of exact pixels: 1369
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 342
+*********************************************
+
+*********************************************
+Comparing ./images/s38i3p04.png to ./images/s38i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 38 x 38 
+Number of pixels: 1444 
+Number of exact pixels: 1444
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 361
+*********************************************
+
+*********************************************
+Comparing ./images/s38n3p04.png to ./images/s38n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 38 x 38 
+Number of pixels: 1444 
+Number of exact pixels: 1444
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 361
+*********************************************
+
+*********************************************
+Comparing ./images/s39i3p04.png to ./images/s39i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 39 x 39 
+Number of pixels: 1521 
+Number of exact pixels: 1521
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 380
+*********************************************
+
+*********************************************
+Comparing ./images/s39n3p04.png to ./images/s39n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 39 x 39 
+Number of pixels: 1521 
+Number of exact pixels: 1521
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 380
+*********************************************
+
+*********************************************
+Comparing ./images/s40i3p04.png to ./images/s40i3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 40 x 40 
+Number of pixels: 1600 
+Number of exact pixels: 1600
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 400
+*********************************************
+
+*********************************************
+Comparing ./images/s40n3p04.png to ./images/s40n3p04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 0.000000 
+Maximum pixel color error: 0.000000 
+Standard Deviation of error: 0.000000
+Image Dimensions 40 x 40 
+Number of pixels: 1600 
+Number of exact pixels: 1600
+Percentage correct pixels: 100.000000
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 0.000000 
+Maximum block color error: 0.000000 
+Standard Deviation of block error: 0.000000
+Total number of blocks: 400
+*********************************************
+
+*********************************************
+Comparing ./images/tbbn1g04.png to ./images/tbbn1g04-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 37.256008 
+Maximum pixel color error: 206.114044 
+Standard Deviation of error: 2.477866
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 828
+Percentage correct pixels: 80.859375
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 60.391739 
+Maximum block color error: 206.114044 
+Standard Deviation of block error: 5.862700
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/tbbn2c16.png to ./images/tbbn2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 39.346207 
+Maximum pixel color error: 219.970459 
+Standard Deviation of error: 2.617253
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 779
+Percentage correct pixels: 76.074219
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 62.988743 
+Maximum block color error: 219.970459 
+Standard Deviation of block error: 6.197151
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/tbgn2c16.png to ./images/tbgn2c16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 39.346207 
+Maximum pixel color error: 219.970459 
+Standard Deviation of error: 2.617253
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 779
+Percentage correct pixels: 76.074219
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 62.988743 
+Maximum block color error: 219.970459 
+Standard Deviation of block error: 6.197151
+Total number of blocks: 256
+*********************************************
+
+*********************************************
+Comparing ./images/tbwn1g16.png to ./images/tbwn1g16-nq8.png
+RGBA image color difference statistics.
+Mean pixel color error: 38.906868 
+Maximum pixel color error: 219.970459 
+Standard Deviation of error: 2.621852
+Image Dimensions 32 x 32 
+Number of pixels: 1024 
+Number of exact pixels: 829
+Percentage correct pixels: 80.957031
+
+RGBA image color block difference statistics.
+Blocksize 2 x 2 = 4 pixels
+Mean block color error: 62.780079 
+Maximum block color error: 219.970459 
+Standard Deviation of block error: 6.205029
+Total number of blocks: 256
+*********************************************

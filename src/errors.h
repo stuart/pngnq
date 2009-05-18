@@ -25,4 +25,4 @@
     PNGNQ_LOG_WARNING(__VA_ARGS__)\
     fflush(stderr);
 
-#define PNGNQ_MESSAGE(...) ;/*(if(verbose) { fprintf(stderr,(__VA_ARGS__));fflush(stderr);})*/
+#define PNGNQ_MESSAGE(...) {if(verbose) {fprintf(stderr,__VA_ARGS__);fflush(stderr);}}

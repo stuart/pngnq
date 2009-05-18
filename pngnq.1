@@ -9,6 +9,8 @@ pngnq \- quantize png images
 .I sample_factor
 .B ][-Q 
 .I dither
+.B ][-g
+.I gamma
 .B ][-e 
 .I extension 
 .B ][-d 
@@ -39,6 +41,8 @@ Specifies the number of colors to quantize to. Defaults to 256 which is the maxi
 The minimum here is 2. 
 .IP "-Q dither"
 Choose a dithering method: n = no dither (default), f = Floyd Steinberg dithering.
+.IP "-g gamma"
+Set the image gamma correction. If not present, uses the png file's gamma or defaults to 1.0.
 .IP "-e extension"
 Specifies the new filename extension. Defaults to "-nq8.png". 
 Pngnq drops .png from the original filenames. If you set the argument of the -e option
@@ -55,7 +59,7 @@ Print program help.
 Print version number and library versions.
 
 .SH BUGS
-Does not deal correctly with greyscale alpha images with low bit depths.
+Does not deal correctly with greyscale alpha images with low bit depths, but these wont benefit from quantizing.
 
 .SH AUTHOR
 Stuart Coyle <stuart.coyle@gmail.com>

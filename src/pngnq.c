@@ -73,9 +73,9 @@ Options:\n\
 #include <ctype.h> /* isprint() and features.h */
 
 #if HAVE_GETOPT
-#include <unistd.h>
+#  include <unistd.h>
 #else
-#include "../freegetopt/getopt.h"
+#  include "../freegetopt/getopt.h"
 #endif
 
 #if HAVE_VALGRIND_H
@@ -222,14 +222,16 @@ int main(int argc, char** argv)
 
  
   if (errors)
-	 {
-	    PNGNQ_MESSAGE("There were errors quantizing %d file%s out of a total of %d file%s.\n",errors, (errors == 1)? "" : "s",file_count, (file_count == 1)? "" : "s")}
-  else{
-     PNGNQ_MESSAGE("No errors detected while quantizing %d image%s.\n",file_count, (file_count == 1)? "" : "s");}
+	 { 
+	     PNGNQ_MESSAGE("There were errors quantizing %d file%s out of a total of %d file%s.\n",
+             errors, (errors == 1)? "" : "s",file_count, (file_count == 1)? "" : "s");
   }
-
+  else
+  {
+     PNGNQ_MESSAGE("No errors detected while quantizing %d image%s.\n",
+             file_count, (file_count == 1)? "" : "s");
+  }
   exit(errors);
-
 }
 
 
@@ -524,10 +526,12 @@ static int pngnq(char* filename, char* newext, char* newdir,
    }
 
   
-   if (file_gamma > 0) PNGNQ_MESSAGE("Using image gamma %e (1/%e)\n", file_gamma, 1.0/file_gamma);
-     else PNGNQ_MESSAGE("Assuming gamma %1.4f (1/%1.1f)\n",quantization_gamma,1.0/quantization_gamma);        
-  
-    
+   if (file_gamma > 0) {
+       PNGNQ_MESSAGE("Using image gamma %e (1/%e)\n", file_gamma, 1.0/file_gamma);
+       }
+     else { 
+       PNGNQ_MESSAGE("Assuming gamma %1.4f (1/%1.1f)\n",quantization_gamma,1.0/quantization_gamma);   
+       }     
     
     if (sample_factor<1)
     {
@@ -557,14 +561,12 @@ static int pngnq(char* filename, char* newext, char* newdir,
       remap[x] = bot_idx++;
   }
   
-     PNGNQ_MESSAGE( "%d entr%s left\n", bot_idx,(bot_idx == 1)? "y" : "ies");
+  PNGNQ_MESSAGE( "%d entr%s left\n", bot_idx,(bot_idx == 1)? "y" : "ies");
   
-  }
 
   /* sanity check:  top and bottom indices should have just crossed paths */
   if (bot_idx != top_idx + 1) {
-    PNGNQ_WARNING("  Internal logic error: remapped bot_idx = %d, top_idx = %d\n",
-	    bot_idx, top_idx);
+    PNGNQ_WARNING("  Internal logic error: remapped bot_idx = %d, top_idx = %d\n",bot_idx, top_idx);
     if (rwpng_info.row_pointers)
       free(rwpng_info.row_pointers);
     if (rwpng_info.rgba_data)
