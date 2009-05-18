@@ -24,15 +24,20 @@
  * Copyright (c) Stuart Coyle 2004-2006
  */
 
+/*
+ * Rewritten by Kornel Lesiński (2009)
+ * Euclidean distance, color matching dependent on alpha channel 
+ * and with gamma correction. code refreshed for modern compilers/architectures:
+ * ANSI C, floats, removed pointer tricks and used arrays and structs.
+ */
+
 
 #include <stdio.h>
 #include <string.h>
 
+
 #define MAXNETSIZE	256    /* maximum number of colours that can be used. 
 				  actual number is now passed to initcolors */
-
-/* For 256 colours, fixed arrays need 8kb, plus space for the image
-   ---------------------------------------------------------------- */
 
 
 /* four primes near 500 - assume no image has a length so large */
@@ -47,15 +52,14 @@
 
 /* Initialise network in range (0,0,0,0) to (255,255,255,255) and set parameters
    ----------------------------------------------------------------------- */
-void initnet(unsigned char *thepic, int len, int sample, int colours);
+void initnet(unsigned char *thepic, unsigned int len, unsigned int colours, double gamma);
 		
 /* Unbias network to give byte values 0..255 and record position i to prepare for sort
    ----------------------------------------------------------------------------------- */
-void unbiasnet();	/* can edit this function to do output of colour map */
+static inline double biasvalue(unsigned int temp);
 
 /* Output colour map
    ----------------- */
-void writecolourmap(FILE *f);
 void getcolormap(unsigned char *map);
 
 /* Insertion sort of network and building of netindex[0..255] (to do after unbias)
@@ -64,11 +68,12 @@ void inxbuild();
 
 /* Search for ABGR values 0..255 (after net is unbiased) and return colour index
    ---------------------------------------------------------------------------- */
-int inxsearch(register int al, register int b, register int g, register int r);
+unsigned int inxsearch( int al,  int b,  int g,  int r);
+unsigned int slowinxsearch( int al, int b, int g, int r);
 
 /* Main Learning Loop
    ------------------ */
-void learn();
+void learn(unsigned int samplefactor, unsigned int verbose);
 
 /* Program Skeleton
    ----------------

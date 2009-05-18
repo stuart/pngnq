@@ -1,14 +1,13 @@
 # Autoconf for pngnq
 
-AC_INIT([pngnq],[0.6], [stuart@cybertherial.com])
-AM_INIT_AUTOMAKE
-AC_COPYRIGHT([Copyright 2008, Stuart Coyle])
+AC_INIT([pngnq],[1.0], [stuart.coyle@gmail.com])
+AM_INIT_AUTOMAKE[-Wall -Werror]
+AC_COPYRIGHT([Copyright 2008-2009, Stuart Coyle])
 
 # check for progs
 AC_CHECK_PROG([HAS_LIBPNG_CONFIG],[libpng-config],[1])
 
 # checks for libraries
-
 
 # checks for header files
 AC_CHECK_HEADERS([ctype.h])
@@ -16,6 +15,7 @@ AC_CHECK_HEADERS([sys/stat.h])
 AC_CHECK_HEADERS([sys/time.h]) 
 AC_CHECK_HEADERS([valgrind/callgrind.h])
 AC_CHECK_HEADERS([fcntl.h])
+AC_CHECK_HEADERS([unistd.h])
                    
 # checks for compiler characteristics
 AC_PROG_CC
@@ -34,6 +34,6 @@ AC_CHECK_FUNCS([sqrt])
 AC_CHECK_FUNCS([strchr])
 AC_CHECK_FUNCS([strrchr])
 
-AC_CONFIG_HEADERS([config.h])
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_HEADERS([src/config.h])
+AC_CONFIG_FILES([Makefile src/Makefile freegetopt/Makefile])
 AC_OUTPUT

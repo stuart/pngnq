@@ -1,21 +1,23 @@
 \" Process this file with
 .\" groff -man -Tascii foo.1
 .\"
-.TH PNGNQ 1 "NOVEMBER 2007" Linux "User Manuals"
+.TH PNGNQ 1 "MAY 2009" Linux "User Manuals"
 .SH NAME
 pngnq \- quantize png images
 .SH SYNOPSIS
 .B pngnq [-vfhV][-s 
 .I sample_factor
+.B ][-Q 
+.I dither
 .B ][-e 
 .I extension 
 .B ][-d 
 .I dir
 .B ][-n 
 .I colors
-.B][
+.B ][
 .I inputfiles
-.B]
+.B ]
 .SH DESCRIPTION
 .B pngnq
 Quantizes a 32-bit RGBA PNG image to an 8 bit RGBA palette PNG 
@@ -35,6 +37,8 @@ every image pixel.
 .IP "-n colors"
 Specifies the number of colors to quantize to. Defaults to 256 which is the maximum.
 The minimum here is 2. 
+.IP "-Q dither"
+Choose a dithering method: n = no dither (default), f = Floyd Steinberg dithering.
 .IP "-e extension"
 Specifies the new filename extension. Defaults to "-nq8.png". 
 Pngnq drops .png from the original filenames. If you set the argument of the -e option
@@ -51,9 +55,9 @@ Print program help.
 Print version number and library versions.
 
 .SH BUGS
-None known at this time.
+Does not deal correctly with greyscale alpha images with low bit depths.
 
 .SH AUTHOR
-Stuart Coyle <stuart@cybertherial.com>
+Stuart Coyle <stuart.coyle@gmail.com>
 .SH "SEE ALSO"
 .BR png(5)

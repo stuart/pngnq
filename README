@@ -3,7 +3,7 @@ VERSION 0.5
 
 USAGE: 
 
-  pngnq [-vfhV][-s sample factor][-e extension][-d dir][-n colours][input files]
+  pngnq [-vfhV][-s sample factor][-e extension][-d dir][-n colours][-Q f|n][input files]
   options:
      -v Verbose mode. Prints status messages.
      -f Force ovewriting of files.
@@ -14,7 +14,7 @@ USAGE:
      -d Relocates the quantized files into this directory. 
         Otherwise output files stay in the same directory as the input files. 
      input files: The png files to be processed. Defaults to standard input if not specified.
-
+     -Q Dithering method: f = Floyd Steinberg, n = None (default)
      -V Print version number and library versions.
      -h Print this help.
 
@@ -44,19 +44,25 @@ I use Greg Roelf's png reading and writing code unchanged for the most part.
 The pngnq source code includes neuquant32, which is an extension of Anthony Dekker's 
 neuquant, to make it handle 4 channels of pixel data.
 
+Major rewrite by Kornel Lesiński, adding double precision, dithering, better handling of alpha
+transparency and more. Thanks!
+
 This program has been tested on: 
 	Linux 32 and 64 bit
-	Mac OSX
+	Mac OSX - intel processor.
 	OpenBSD 32 bit
 	Win32
 
 REQUIREMENTS:
 	Pngnq depends on the libpng and libz libraries.
-	You will need libpng 1.2.8 installed. 
+	You will need libpng >=1.2.8 installed. 
 	If you have this then you will have libz. 
-        On windows you will require the libpng13.dll 
+  On windows you will require the libpng13.dll 
 	which can be downloaded from several sites.
 
+BUGS:
+  Some problems with greyscale alpha images at low bit depths.
+  
 TODO list:
 
 	I want to change the error measure to use CIE u' v' color
@@ -66,10 +72,9 @@ TODO list:
 	the image pixel depth etc.
 
 	Do a detailed comparison with other quantization algortithms.
-		-  the pngcomp tool is in development to do this
+		-  the pngcomp tool is in development to do this.
 
-	Make a GIMP plugin that uses this.
 
-Copyright (c) Stuart Coyle 2004-2007 stuart.coyle@gmail.com
+Copyright (c) Stuart Coyle 2004-2009 stuart.coyle@gmail.com
 
-See LICENCES for details of copyrights held on this program.
+See LICENCE for details of copyrights held on this program.

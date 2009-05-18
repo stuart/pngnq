@@ -155,12 +155,12 @@ int rwpng_read_image(FILE *infile, mainprog_info *mainprog_ptr)
         return mainprog_ptr->retval;
 #endif
     }
-/*
+
     if (color_type == PNG_COLOR_TYPE_GRAY && bit_depth < 8)
         png_set_expand(png_ptr);
     if (png_get_valid(png_ptr, info_ptr, PNG_INFO_tRNS))
         png_set_expand(png_ptr);
- */
+ 
     /* GRR TO DO:  handle 16-bps data natively? */
     if (bit_depth == 16)
         png_set_strip_16(png_ptr);

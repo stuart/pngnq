@@ -19,8 +19,10 @@ typedef struct {
    These are all defined in the CIE XYZ colorspace. 
 */
 
+
 /* If the whitepoint is passed as NULL d65 is the default */
 static color_XYZ d65 = {0.94810,1.0000,1.07305};
+static color_XYZ d00 = {0.0, 0.0, 0.0};
 
 /* Convert rgb to a CIE XYZ color, using the supplied white point 
    result is stored in xyz 

@@ -1,15 +1,9 @@
 INSTALLATION INSTRUCTIONS:
+This should work on most UNIX style systems:
 
-1. Check the Makefile, adjust the installation options to suit your system.
-   Especially check BINDIR, MANDIR and DOCDIR these are the directories where
-   the binaries, man pages and docs are put.  
-   The defaults here are for my Gentoo GNU/Linux system. 
-	
-2. Type "make all" 
-
-4. As root, type "make install" or do "sudo make install"
-
-5. Enjoy. 
+./configure
+make
+sudo make install
 
 NOTES:
 There may be warnings about strings being too long. Unless you have a really ancient 

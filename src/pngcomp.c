@@ -23,16 +23,26 @@ The error is calculated as the linear distance between two colors in RGBA space.
 */
 
 
+
 #define PNGCOMP_USAGE "usage: pngcomp [-vVh] image1.png image2.png\n\
   options: v - verbose, does nothing as yet.\n\
            V - version, prints version information.\n\
            h - help, prionts this message.\n\
+           b - Block size in pixels. This is the length of the block side.\n\
+           R - Use RGBA colorspace to calculate errors.\n\
+           L - Use LUVA colorspace to calculate errors.\n\
   inputs: image1.png and image2.png are the two images that are to be compared.\n\
           it is required that they be the same size.\n\
 \n\
   This program give some basic statistics about the difference between two images.\n\
-  It was created as a measure of various color quantization methods.\n"
-
+  It was created as a measure of various color quantization methods.\n\
+\n\
+  The statistics given include individual pixel differences and also\n\
+  block statistics averaged over blocks of pixels. The latter is a better measure\n\
+  when images have been dithered.\n\
+\n\
+  The use of these statistics is limited in that they do not contain a model of human vision."
+  
 #define MAX_COLOR_VAL 256
 #define SQRT_3 1.73205
 
@@ -41,14 +51,17 @@ The error is calculated as the linear distance between two colors in RGBA space.
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
+#include <unistd.h>
 
 #include "png.h"
 #include "config.h"
 #include "rwpng.h"
 #include "colorspace.h" 
 
-#ifdef WIN32
-#include "freegetopt/getopt.h"
+#if HAVE_GETOPT 
+  #include <unistd.h>
+#else
+  #include "../freegetopt/getopt.h"
 #endif
 
 typedef struct {
@@ -268,8 +281,7 @@ float *imagediff(char* file1_name, char* file2_name){
       
     }
   }
-
-
+  
   return error_data;
 }
 
@@ -388,8 +400,19 @@ float LUVerrval(pixel *p1, pixel *p2){
   color_LUV c1;
   color_LUV c2;
   
-  rgb2LUV(p1,&c1,NULL);
-  rgb2LUV(p2,&c2,NULL);
+  color_rgb r1;
+  color_rgb r2;
+  
+  r1.r = p1->r;
+  r1.g = p1->g;
+  r1.b = p1->b;
+  
+  r2.r = p2->r;
+  r2.g = p2->g;
+  r2.b = p2->b;
+  
+  rgb2LUV(&r1,&c1,NULL);
+  rgb2LUV(&r2,&c2,NULL);
   long err;
  
   long err_L = c1.L-c2.L;
@@ -399,8 +422,6 @@ float LUVerrval(pixel *p1, pixel *p2){
   err = err_L*err_L + err_u*err_u + err_v*err_v+ err_a*err_a;
   return sqrt((double)err);  
 }
-
-
 
 
 struct statistics *gather_stats(float *error_data){
