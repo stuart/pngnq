@@ -1,0 +1,7 @@
+May 2009:  Version 1.0 release. 
+           Moved to using Kornel Lesiński's codebase. Many changes since 0.5.
+           
+           - Gamma value option.
+           - Scaling of alpha channel response to give more colors to opaque .
+           - Checked with valgrind.
+           - 
