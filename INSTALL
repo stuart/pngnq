@@ -1,9 +1,12 @@
 INSTALLATION INSTRUCTIONS:
 This should work on most UNIX style systems:
 
+tar -xzvf pngnq-1.0.tar.gz
+cd pngnq-1.0
 ./configure
 make
 sudo make install
+
 
 NOTES:
 There may be warnings about strings being too long. Unless you have a really ancient 
