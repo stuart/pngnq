@@ -5,6 +5,41 @@
 
 #include "colorspace.h"
 
+/* Calculate transform matrix from whitepoint. */
+/* Need to get cHRM and gAMA from image */
+
+/* cHRM
+    White Point x 4bytes
+    White Point y 4
+    Red x 4
+    Red y 4
+    Green x 4
+    Green y 4
+    Blue x 4
+    Blue y 4
+    
+    Each 4 bytes uint representing value x 100000
+    
+    cHRM must preceed IDAT and PLTE
+    sRGB and iCCP override cHRM
+    
+*/
+float* wp_matrix(const color_XYZ *wp){
+    float* m = malloc(sizeof(float)*9);
+    if(!m){
+        fprintf(stderr,"wp_matrix: Out of memory.");
+        exit(EXIT_FAILURE);
+    }
+    
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            m[i][j] = 0 /* TODO */
+        }
+    }
+    
+    return m;
+}
+
 /* Convert from rgb to XYZ colorspace */
 /* Note this assumes a D65 whitepoint */
 void rgb2XYZ(const color_rgb *rgb, color_XYZ *xyz, const color_XYZ *wp)
@@ -43,7 +78,7 @@ void XYZ2LUV(color_XYZ *xyz, color_LUV *luv, const color_XYZ *wp)
   u = 4.0 * xyz->X/(xyz->X + 15.0 * xyz->Y + 3.0 * xyz->Z);
   v = 9.0 * xyz->Y/(xyz->X + 15.0 * xyz->Y + 3.0 * xyz->Z);
   
-  if(yref>e){
+  if(yref > e){
     luv->L = 116.0*powf(yref,1.0/3.0)-16.0; 
   }else{
     luv->L = k*yref;
@@ -61,7 +96,14 @@ void rgb2LUV(const color_rgb *rgb, color_LUV *luv, const color_XYZ *wp)
   XYZ2LUV(&xyz,luv,0);
 }
 
+void LUV2rgb()
+{
+    
+}
+
+
 #if 0
+  /* Just for testing */
   int  main(int argv, char **argc){
     int r,g,b;
     color_rgb RGB;

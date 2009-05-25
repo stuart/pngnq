@@ -37,3 +37,4 @@ void XYZ2LUV(color_XYZ *xyz, color_LUV *luv, const color_XYZ *wp);
    result is stored in luv */
 void rgb2LUV(const color_rgb *rgb, color_LUV *luv, const color_XYZ *wp);
 
+
