@@ -2,7 +2,7 @@
 
 AC_INIT([pngnq],[1.1], [stuart.coyle@gmail.com])
 AM_INIT_AUTOMAKE[-Wall -Werror]
-AC_COPYRIGHT([Copyright 2008-2010, Stuart Coyle])
+AC_COPYRIGHT([Copyright 2008-2011, Stuart Coyle])
 
 # check for progs
 AC_CHECK_PROG([HAS_LIBPNG_CONFIG],[libpng-config],[1])
