@@ -270,7 +270,7 @@ char *createoutname(char *infilename, char* newext, char *newdir){
     }
 	 
     /* add a separator to newdir if needed */
-    if(newdir && newdir[dir_len] != DIR_SEPARATOR_CHAR){
+    if(newdir && newdir[dir_len-1] != DIR_SEPARATOR_CHAR){
       strncpy(newdir+dir_len,DIR_SEPARATOR_STR,1);
       dir_len++;
     }
@@ -291,7 +291,7 @@ char *createoutname(char *infilename, char* newext, char *newdir){
     strncpy(outname+dir_len+fn_len-4, newext, ext_len);
   else
     strncpy(outname+dir_len+fn_len, newext, ext_len);
-
+  
   return(outname);
 }
 
