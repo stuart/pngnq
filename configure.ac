@@ -7,8 +7,6 @@ AC_COPYRIGHT([Copyright 2008-2010, Stuart Coyle])
 # check for progs
 AC_CHECK_PROG([HAS_LIBPNG_CONFIG],[libpng-config],[1])
 
-# checks for libraries
-
 # checks for header files
 AC_CHECK_HEADERS([ctype.h])
 AC_CHECK_HEADERS([sys/stat.h])
@@ -25,6 +23,11 @@ AC_FUNC_MALLOC
 AC_FUNC_STAT
 AC_HEADER_STDBOOL
 
+# checks for libraries
+AC_SEARCH_LIBS([zlibVersion],[z])
+AC_SEARCH_LIBS([sqrt],[m])
+PKG_CHECK_MODULES([PNG], [libpng >= 1.2.0])
+
 # checks for library functions
 AC_CHECK_FUNCS([getopt])
 AC_CHECK_FUNCS([floor])
@@ -35,6 +38,7 @@ AC_CHECK_FUNCS([sqrt])
 AC_CHECK_FUNCS([strchr])
 AC_CHECK_FUNCS([strrchr])
 
-AC_CONFIG_HEADERS([src/config.h])
+AC_CONFIG_HEADERS([src/config.h]) 
+AM_CONDITIONAL([USE_FREEGETOPT],[ test $ac_cv_func_getopt = "no" ])
 AC_CONFIG_FILES([Makefile src/Makefile freegetopt/Makefile])
 AC_OUTPUT
