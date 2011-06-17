@@ -1,0 +1,15 @@
+17th June 2011 Version 1.1 Released
+
+Bugfixes:
+
+Fixed -d option so that it gives the correct directory now.
+
+Removed spurious error message when -Qf option was given.
+
+Include unistd.h for getopt, will use the bundled freegetopt if getopt is no available.
+
+Can now overwrite files in place.
+
+Fix for images with mainly one color being quantized with a low number of colors so that
+they now should have the correct transparent areas.
+

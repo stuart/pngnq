@@ -1,8 +1,8 @@
 INSTALLATION INSTRUCTIONS:
 This should work on most UNIX style systems:
 
-tar -xzvf pngnq-1.0.tar.gz
-cd pngnq-1.0
+tar -xzvf pngnq-1.1.tar.gz
+cd pngnq-1.1
 ./configure
 make
 sudo make install
@@ -16,7 +16,7 @@ to the CFLAGS or get rid of --pedantic.
 If you successfully build this on a system other than those listed below please 
 tell me. Also tell me if it does not work. 
 
-
+ 
 Cheers,
 	Stuart Coyle
 	stuart@cybertherial.com
