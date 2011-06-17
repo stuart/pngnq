@@ -464,7 +464,20 @@ static int pngnq(char* filename, char* newext, char* newdir,
       return 14;
     }
   }
-	
+  
+  /* Read input file */
+  rwpng_read_image(infile, &rwpng_info);
+  if (!using_stdin)
+    fclose(infile);
+
+  if (rwpng_info.retval) {
+    PNGNQ_ERROR("  rwpng_read_image() error: %d\n", rwpng_info.retval);
+    if (!using_stdin)
+      fclose(outfile);
+    return(rwpng_info.retval); 
+  }
+  
+  /* Open output file */  
   if(using_stdin)
   { 
     set_binary_mode(stdout);
@@ -486,19 +499,6 @@ static int pngnq(char* filename, char* newext, char* newdir,
       PNGNQ_ERROR("  Cannot open %s for writing\n", outname);
       return 16;
     }
-  }
-
-
-  /* Read input file */
-  rwpng_read_image(infile, &rwpng_info);
-  if (!using_stdin)
-    fclose(infile);
-
-  if (rwpng_info.retval) {
-    PNGNQ_ERROR("  rwpng_read_image() error: %d\n", rwpng_info.retval);
-    if (!using_stdin)
-      fclose(outfile);
-    return(rwpng_info.retval); 
   }
 
   cols = rwpng_info.width;

@@ -34,7 +34,7 @@ float* wp_matrix(const color_XYZ *wp){
     
     for(int i=0; i<3; i++){
         for(int j=0; j<3; j++){
-            m[3*i + j]  = 0; /* TODO */
+            m[3*i + j]  = 0; /* TODO Calculate WP */
         }
     }
     
