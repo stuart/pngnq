@@ -47,18 +47,18 @@
 
 #define FNMAX 1024
 #define PNGNQ_USAGE "\
-Usage:  pngnq [-vfhV][-e ext.][-d dir][-g gamma][-s speed][-Q dither][-n colours][input files]\n\
+Usage:  pngnq [-fhvV][-d dir][-e ext.][-g gamma][-n colours][-Q dither][-s speed][input files]\n\
 Options:\n\
    -n Number of colours the quantized image is to contain. Range: 16 to 256. Defaults to 256.\n\
+   -d Directory to put quantized images into.\n\
+   -e Specify the new extension for quantized files. Default -nq8.png\n\
    -f Force ovewriting of files.\n\
+   -g Image gamma. 1.0 = linear, 2.2 = monitor gamma. Defaults to 1.8.\n\
+   -h Print this help.\n\n\
    -Q Quantization: n = no dithering (default), f = floyd-steinberg\n\
    -s Speed/quality: 1 = slow, best quality, 3 = good quality, 10 = fast, lower quality.\n\
-   -g Image gamma. 1.0 = linear, 2.2 = monitor gamma. Defaults to 1.8.\n\
-   -e Specify the new extension for quantized files. Default -nq8.png\n\
-   -d Directory to put quantized images into.\n\
    -v Verbose mode. Prints status messages.\n\
    -V Print version number and library versions.\n\
-   -h Print this help.\n\n\
    input files: The png files to be processed. Defaults to standard input if not specified.\n\n\
 \
   Quantizes a 32-bit RGBA PNG image to an 8 bit RGBA palette PNG\n\
