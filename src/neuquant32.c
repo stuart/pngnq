@@ -220,7 +220,7 @@ void inxbuild()
 inline static double colorimportance(double al)
 {
     double transparency = 1.0 - al/255.0;
-    return (1.0 - transparency*transparency);
+    return (1.0 - transparency * transparency);
 }
 
 /* Search for ABGR values 0..255 (after net is unbiased) and return colour index
@@ -344,8 +344,11 @@ int contest(double al,double b,double g,double r)
     bestbiasd = bestd;
     bestpos = 0;
     bestbiaspos = bestpos;
-
-    double colimp = colorimportance(al);
+    
+    /* Using colorimportance(al) here was causing problems with images that were close to monocolor.
+       See bug reports: 3149791, 2938728, 2896731 and 2938710
+    */ 
+    double colimp = 1.0; //colorimportance(al); 
     
     for (i=0; i<netsize; i++)
     {
