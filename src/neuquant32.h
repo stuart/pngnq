@@ -37,8 +37,7 @@
 
 
 #define MAXNETSIZE	256    /* maximum number of colours that can be used. 
-				  actual number is now passed to initcolors */
-
+				              actual number is now passed to initcolors */
 
 /* four primes near 500 - assume no image has a length so large */
 /* that it is divisible by all four primes */
@@ -47,8 +46,7 @@
 #define prime3		487
 #define prime4		503
 
-#define minpicturebytes	(4*prime4)		/* minimum size for input image */
-
+#define minpicturebytes	(4*prime4) /* minimum size for input image */
 
 /* Initialise network in range (0,0,0,0) to (255,255,255,255) and set parameters
    ----------------------------------------------------------------------- */

@@ -32,15 +32,16 @@
 
 /* 
     Network Definitions
-*/
-   
+*/  
 #define maxnetpos   (MAXNETSIZE-1)
 #define ncycles     100                 /* no. of learning cycles */
 #define ABS(a) ((a)>=0?(a):-(a))
 
-/* defs for freq and bias */
+/* defs for freq and bias */  
+/* This gamma is not the color correction gamma, 
+   but rather the constant defined in NeuQuant.pdf (Dekker) p7-8 */
 #define gammashift  10                  /* gamma = 1024 */
-#define gamma       ((double)(1<<gammashift))
+#define gamma       ((double)(1<<gammashift)) 
 #define betashift   10
 #define beta        (1.0/(1<<betashift))/* beta = 1/1024 */
 #define betagamma   ((double)(1<<(gammashift-betashift)))
@@ -63,16 +64,22 @@ double alphadec;                        /* biased by 10 bits */
 
 
 /* 
-    Types and Global Variables
+    Types and Static Variables
 */
+typedef struct                          /* ABGRc */
+{
+  double al,b,g,r;
+} nq_pixel;
+
+typedef struct 
+{
+    unsigned char r,g,b,al;  
+} nq_colormap;
+
+static nq_colormap colormap[256];
    
 static unsigned char *thepicture;      /* the input image itself */
 static unsigned int lengthcount;        /* lengthcount = H*W*4 */
-
-typedef struct                          /* ABGRc */
-{               
-    double al,b,g,r;
-} nq_pixel;
 
 static nq_pixel network[MAXNETSIZE];    /* the network itself */
 
@@ -96,7 +103,7 @@ void initnet(unsigned char *thepic,unsigned int len,unsigned int colours, double
     unsigned int i;
     
     gamma_correction = gamma_c;
-    
+                   
     /* Clear out network from previous runs */
     /* thanks to Chen Bin for this fix */
     memset((void*)network,0,sizeof(network));
@@ -166,13 +173,6 @@ void getcolormap(unsigned char *map)
 
 /* Insertion sort of network and building of netindex[0..255] (to do after unbias)
    ------------------------------------------------------------------------------- */
-
-typedef struct 
-{
-    unsigned char r,g,b,al;  
-} nq_colormap;
-
-static nq_colormap colormap[256];
 
 void inxbuild()
 {
@@ -338,7 +338,8 @@ int contest(double al,double b,double g,double r)
     /* bias[i] = gamma*((1/netsize)-freq[i]) */
 
     unsigned int i; double dist,a,betafreq;
-    unsigned int bestpos,bestbiaspos;double bestd,bestbiasd;
+    unsigned int bestpos,bestbiaspos;
+    double bestd,bestbiasd;
     
     bestd = 1<<30;
     bestbiasd = bestd;
@@ -347,28 +348,22 @@ int contest(double al,double b,double g,double r)
     
     /* Using colorimportance(al) here was causing problems with images that were close to monocolor.
        See bug reports: 3149791, 2938728, 2896731 and 2938710
-    */ 
-    double colimp = 1.0; //colorimportance(al); 
-    
+    */     
     for (i=0; i<netsize; i++)
     {
-        double bestbiasd_biased = bestbiasd + bias[i];
-        
+ 
         a = network[i].b - b;
-        dist = ABS(a) * colimp;
+        dist = ABS(a);
         a = network[i].r - r;
-        dist += ABS(a) * colimp;
+        dist += ABS(a);
+        a = network[i].g - g;
+        dist += ABS(a);
+        a = network[i].al - al;
+        dist += ABS(a);
         
-        if (dist < bestd || dist < bestbiasd_biased)
-        {                 
-            a = network[i].g - g;
-            dist += ABS(a) * colimp;
-            a = network[i].al - al;
-            dist += ABS(a);
-            
-            if (dist<bestd) {bestd=dist; bestpos=i;}
-            if (dist<bestbiasd_biased) {bestbiasd=dist - bias[i]; bestbiaspos=i;}
-        }
+        if (dist<bestd) {bestd=dist; bestpos=i;}
+        if (biasdist<bestbiasd) {bestbiasd = biasdist; bestbiaspos=i;}
+
         betafreq = freq[i] / (1<< betashift);
         freq[i] -= betafreq;
         bias[i] += betafreq * (1<<gammashift);
@@ -472,7 +467,7 @@ void learn(unsigned int samplefac, unsigned int verbose) /* Stu: N.B. added para
     {
         if (p[3])
         {            
-            al =p[3];
+            al = p[3];
             b = biasvalue(p[2]);
             g = biasvalue(p[1]);
             r = biasvalue(p[0]);

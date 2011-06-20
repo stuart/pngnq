@@ -1,7 +1,10 @@
+#ifndef _COLORSPACE_H_INC
+#define _COLORSPACE_H_INC
 /* colorspace.h 
    Defines conversions between various colorspaces
 */
 
+/* 8 bit rgb */
 typedef struct {
   unsigned char r, g, b;
 } color_rgb;
@@ -14,27 +17,47 @@ typedef struct {
   float L,U,V;
 } color_LUV;
 
+typedef struct {
+  float L,a,b;
+} color_Lab;
 
-/* Standard white points 
-   These are all defined in the CIE XYZ colorspace. 
+/* Chrominance  from cHRM chunk */
+struct chrominance{
+    float w_x;
+    float w_y;
+    float r_x;
+    float r_y;
+    float g_x;
+    float g_y;
+    float b_x;
+    float b_y;
+};
+
+/* Initialize the color space with a chrominance structure 
+   This must be called before any of the conversion functions are used.
+   If chrm = NULL a srgb colorspace with D65 whitepoint is assumed. */
+void init_colorspace(struct chrominance *chrm);
+
+/* Convert rgb to a CIE XYZ color (CIE 1931 XYZ). 
+   Result is stored in xyz.
 */
+void rgb2XYZ(const color_rgb *rgb, color_XYZ *xyz);
 
+/* Convert an XYZ color to an LUV color (CIE 1976(L*,u*v*)) 
+   Result is stored in luv */
+void XYZ2LUV(const color_XYZ *xyz, color_LUV *luv);
+void LUV2XYZ(const color_LUV *luv, color_XYZ *xyz);
+/* Convert an XYZ color to an Lab color (CIE 1976 (L*, a*, b*))
+   Result is stored in lab */
+void XYZ2Lab(color_XYZ *xyz, color_Lab *lab);
 
-/* If the whitepoint is passed as NULL d65 is the default */
-static color_XYZ d65 = {0.94810,1.0000,1.07305};
-static color_XYZ d00 = {0.0, 0.0, 0.0};
+/* Convert rgb to a CIE XYZ color. Result is stored in luv */
+void rgb2LUV(const color_rgb *rgb, color_LUV *luv);
 
-/* Convert rgb to a CIE XYZ color, using the supplied white point 
-   result is stored in xyz 
-*/
-void rgb2XYZ(const color_rgb *rgb, color_XYZ *xyz, const color_XYZ *wp);
+/* Convert rgb to a CIE Lab color. Result is stored in lab */
+void rgb2Lab(const color_rgb *rgb, color_Lab *lab);
 
-/* Convert an XYZ color to an LUV color 
-   result is stored in luv */
-void XYZ2LUV(color_XYZ *xyz, color_LUV *luv, const color_XYZ *wp);
+/* Convert CIE Lab to an rgb color. Result is stored in rgb. */
+void Lab2rgb(const color_Lab *lab, color_rgb *rgb);
 
-/* Convert rgb to a CIE XYZ color, using the supplied white point 
-   result is stored in luv */
-void rgb2LUV(const color_rgb *rgb, color_LUV *luv, const color_XYZ *wp);
-
-
+#endif
