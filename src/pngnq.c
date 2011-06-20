@@ -514,10 +514,13 @@ static int pngnq(char* filename, char* newext, char* newdir,
    {
        quantization_gamma = force_gamma;
        file_gamma=0;
+   }else if(mainprog_info->have_srgb){
+       /* we ignore the file gamma and use the sRGB standard instead */
+       quantization_gamma = 0.45455;
    }
-   else if (png_get_gAMA(rwpng_info.png_ptr, rwpng_info.info_ptr, &file_gamma) && file_gamma > 0)
+   else if (mainprog_info->have_gamma && file_gamma > 0)
    {          
-      quantization_gamma = file_gamma;
+       quantization_gamma = file_gamma;
    }
    else
    {

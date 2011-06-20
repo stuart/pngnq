@@ -124,7 +124,6 @@ int rwpng_read_image(FILE *infile, mainprog_info *mainprog_ptr)
 
     png_read_info(png_ptr, info_ptr);  /* read all PNG info up to image data */
 
-
     /* alternatively, could make separate calls to png_get_image_width(),
      * etc., but want bit_depth and color_type for later [don't care about
      * compression_type and filter_type => NULLs] */
@@ -171,11 +170,32 @@ int rwpng_read_image(FILE *infile, mainprog_info *mainprog_ptr)
 
 
     /* get and save the gamma info (if any) for writing */
-
+    mainprog_ptr->have_gamma = 0;
     mainprog_ptr->gamma = 0.0;
-    png_get_gAMA(png_ptr, info_ptr, &mainprog_ptr->gamma);
-
-
+    if(png_get_gAMA(png_ptr, info_ptr, &mainprog_ptr->gamma)){
+        mainprog_ptr->have_gamma = 1;  
+    };
+    
+    /* set to an invalid sRGB value */
+    mainprog_ptr->srgb_intent = PNG_sRGB_INTENT_LAST;
+    mainprog_ptr->have_srgb = 0; 
+    if(png_get_sRGB(png_ptr, info_ptr, &mainprog_ptr->srgb_intent)){
+        mainprog_ptr->have_srgb = 1;    
+    };
+    
+    mainprog_ptr->have_chrm = 0;
+    if(png_get_cHRM(png_ptr, info_ptr, 
+                    &mainprog_ptr->white_x, 
+                    &mainprog_ptr->white_y,
+                    &mainprog_ptr->red_x,
+                    &mainprog_ptr->red_y,
+                    &mainprog_ptr->green_x,
+                    &mainprog_ptr->green_y,
+                    &mainprog_ptr->blue_x,
+                    &mainprog_ptr->blue_y) == PNG_INFO_cHRM){
+                        mainprog_ptr->have_chrm = 1;                        
+    }
+    
     /* Get background color */
     if(png_get_valid(png_ptr, info_ptr, PNG_INFO_bKGD))
       {

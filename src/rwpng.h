@@ -64,7 +64,21 @@ typedef struct _rwpng_color_struct {
 } rwpng_color;
 
 typedef struct _mainprog_info {
-    double gamma;
+    uch have_gamma;     /* read */
+    double gamma;       /* read/write */
+    uch have_srgb;      /* read */
+    int srgb_intent;    /* read/write */
+    
+    uch have_chrm;     /* read */
+    double white_x;    /* Chrominance data all r/w */
+    double white_y;
+    double red_x;
+    double red_y;
+    double green_x;
+    double green_y;
+    double blue_x;
+    double blue_y;
+    
     ulg width;			/* read/write */
     ulg height;			/* read/write */
     ulg rowbytes;		/* read */
