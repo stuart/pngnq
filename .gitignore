@@ -15,3 +15,7 @@ src/Makefile
 src/Makefile.in
 src/config.h
 src/stamp-h1
+*.o
+src/pngcomp
+src/pngnq
+a.out
