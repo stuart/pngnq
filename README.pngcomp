@@ -1,5 +1,5 @@
 PNGCOMP - PNG COMPARISON
-VERSION 0.5
+VERSION 1.1
 
 USAGE: 
   pngcomp [-vVhRL] image1.png image2.png
