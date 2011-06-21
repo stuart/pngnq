@@ -339,7 +339,7 @@ int contest(double al,double b,double g,double r)
 
     unsigned int i; double dist,a,betafreq;
     unsigned int bestpos,bestbiaspos;
-    double bestd,bestbiasd;
+    double bestd,bestbiasd,biasdist;
     
     bestd = 1<<30;
     bestbiasd = bestd;
@@ -362,6 +362,8 @@ int contest(double al,double b,double g,double r)
         dist += ABS(a);
         
         if (dist<bestd) {bestd=dist; bestpos=i;}
+        
+        biasdist = dist - beta;
         if (biasdist<bestbiasd) {bestbiasd = biasdist; bestbiaspos=i;}
 
         betafreq = freq[i] / (1<< betashift);

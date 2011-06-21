@@ -40,5 +40,5 @@ AC_CHECK_FUNCS([strrchr])
 
 AC_CONFIG_HEADERS([src/config.h]) 
 AM_CONDITIONAL([USE_FREEGETOPT],[ test $ac_cv_func_getopt = "no" ])
-AC_CONFIG_FILES([Makefile src/Makefile freegetopt/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile freegetopt/Makefile test/Makefile])
 AC_OUTPUT
