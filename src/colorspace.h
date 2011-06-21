@@ -49,7 +49,8 @@ void XYZ2LUV(const color_XYZ *xyz, color_LUV *luv);
 void LUV2XYZ(const color_LUV *luv, color_XYZ *xyz);
 /* Convert an XYZ color to an Lab color (CIE 1976 (L*, a*, b*))
    Result is stored in lab */
-void XYZ2Lab(color_XYZ *xyz, color_Lab *lab);
+void XYZ2Lab(const color_XYZ *xyz, color_Lab *lab);
+void Lab2XYZ(const color_Lab *lab, color_XYZ *xyz);
 
 /* Convert rgb to a CIE XYZ color. Result is stored in luv */
 void rgb2LUV(const color_rgb *rgb, color_LUV *luv);

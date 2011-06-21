@@ -9,6 +9,8 @@
 #include "math.h"
 
 #define round(x) ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
+static const double e = 216.0/24389.0;
+static const double k = 24389.0/27.0;
 
 /* Storage for conversion matrices */
 static matrix_3 colorspace_m_rgb2XYZ;
@@ -121,9 +123,6 @@ void XYZ2LUV(const color_XYZ *xyz, color_LUV *luv)
   float u,v;
   float yref,uref,vref;
 
-  const float e = 216.0/24389.0;
-  const float k = 24389.0/27.0;
-  
   if(xyz->Y == 0.0){
       
   }
@@ -163,9 +162,6 @@ void LUV2XYZ(const color_LUV *luv, color_XYZ *xyz){
     float uref,vref;
     float a,b,c,d;
     
-    const float e = 216.0/24389.0;
-    const float k = 24389.0/27.0;
-    
     /* Reference white point */ 
     color_XYZ *wp = &colorspace_wp;
     
@@ -189,28 +185,44 @@ void LUV2XYZ(const color_LUV *luv, color_XYZ *xyz){
 
 /* Lab f value function */
 float f(float t){
-    float f_value, delta, delta_cubed;
-     
-    delta = 6.0/29.0;
-    delta_cubed = delta * delta * delta;
-    
-    if(t > delta_cubed){
-        f_value = cbrt(t); 
+    if(t > e){
+        return cbrt(t);
     }else{
-        f_value = (1.0/(3.0 * delta * delta) * t) + (4.0/29.0); 
-    }
-    
-    return f_value;
+        return(t*29*29/(3*6*6)+4.0/29.0);
+    }           
 }
 
 /* Convert from XYZ space to Lab */
-void XYZ2Lab(color_XYZ *xyz, color_Lab *lab){
-       
-    lab->L = 116 * f(xyz->Y/colorspace_wp.Y) - 16;
-    lab->a = 500 * (f(xyz->X/colorspace_wp.X) - f(xyz->Y/colorspace_wp.Y));
-    lab->b = 200 * (f(xyz->Y/colorspace_wp.Y) - f(xyz->Z/colorspace_wp.Z));   
+void XYZ2Lab(const color_XYZ *xyz, color_Lab *lab){
+    /* Reference white point */ 
+    color_XYZ *wp = &colorspace_wp;
+    
+    lab->L = 116.0 * f(xyz->Y/wp->Y) - 16.0;
+    lab->a = 500.0 * (f(xyz->X/wp->X) - f(xyz->Y/wp->Y));
+    lab->b = 200.0 * (f(xyz->Y/wp->Y) - f(xyz->Z/wp->Z));   
 }
 
+float f_inv(float t){
+    if(t > 6.0/29.0){
+       return(t*t*t);
+    }else{
+       return(3*6*6*(t-4.0/29.0)/(29*29));
+    }
+}
+
+/* Convert from lab to XYZ */
+void Lab2XYZ(const color_Lab *lab, color_XYZ *xyz){
+    
+    double x,y,z;
+ 
+    x = (lab->L+16.0)/116.0 + lab->a/500.0;
+    z = (lab->L+16.0)/116.0 - lab->b/200.0;
+    y = (lab->L+16.0)/116.0;
+    
+    xyz->X = colorspace_wp.X * f_inv(x);
+    xyz->Y = colorspace_wp.Y * f_inv(y);
+    xyz->Z = colorspace_wp.Z * f_inv(z);
+}
 
 void rgb2LUV(const color_rgb *rgb, color_LUV *luv)
 {
@@ -230,6 +242,12 @@ void rgb2Lab(const color_rgb *rgb, color_Lab *lab){
     color_XYZ xyz;
     rgb2XYZ(rgb,&xyz);
     XYZ2Lab(&xyz,lab);
+}
+
+void Lab2rgb(const color_Lab *lab, color_rgb *rgb){
+     color_XYZ xyz;
+     Lab2XYZ(lab, &xyz);
+     XYZ2rgb(&xyz,rgb);
 }
 
 
