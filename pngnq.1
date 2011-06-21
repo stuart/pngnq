@@ -59,8 +59,21 @@ Verbose mode. Prints status messages.
 .IP -V
 Print version number and library versions.
 
+.SH USAGE NOTES
+Pngnq works best when quantizing to a fairly large number of colors (>=64). 
+This mainly a result of the visible edges due to the lack of dithering. 
+The amount of compression of images gained is determined largely by the level of quantization. 
+Using a tool like pngcrush (http://pmt.sourceforge.net/pngcrush/) to further process these images results in slightly smaller images than with methods that dither the image. This is probably due to the lack of high frequency data in the non-dithered images.
+
+To quantize and compress an image, for example image.png, 
+with the compressed output as smallimage.png, I do this:
+
+.I pngnq -n 256 image.png && pngcrush image-nq8.png smallimage.png
+
+This usually results in a greater than 50% compression with a small loss of detail.
+ 
 .SH BUGS
-Does not deal correctly with greyscale alpha images with low bit depths, but these wont benefit from quantizing.
+Does not deal correctly with greyscale alpha images with low bit depths, but these won't benefit from quantizing.
 
 .SH AUTHOR
 Stuart Coyle <stuart.coyle@gmail.com>
