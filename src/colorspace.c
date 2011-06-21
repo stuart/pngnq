@@ -16,6 +16,7 @@ static const double k = 24389.0/27.0;
 static matrix_3 colorspace_m_rgb2XYZ;
 static matrix_3 colorspace_m_XYZ2rgb;
 static color_XYZ colorspace_wp;
+static float colorspace_gamma;
 static int colorspace_initialized;
 
 /* Standard D65 conversions */
@@ -69,24 +70,35 @@ void xyz2rgb_matrix(struct chrominance *chrm, matrix_3 M){
     m3_invert(temp,M);
 }
 
-/* linearize rgb values into srgb values */
+/* linearize rgb values into srgb values or with gamma */
 float c_linear(float c_srgb){
    float result;
-   if(c_srgb > 0.0405){
-         result = pow(((c_srgb + 0.055)/1.055),2.4);
-      }else{
-         result = c_srgb/12.92;
-      }
+   if(colorspace_gamma == 0.0){
+     if(c_srgb > 0.0405){
+       result = pow(((c_srgb + 0.055)/1.055),2.4);
+     }else{
+       result = c_srgb/12.92;
+     } 
+   }else{
+       result = pow(c_srgb,colorspace_gamma);
+   }
    return result;  
 }
 
-/* de-linearize srgb values */
+/* de-linearize srgb values or with gamma */
 float c_srgb(float c_linear){
-  if(c_linear > 0.0031308){
-          return(1.055 * pow(c_linear, 1.0/2.4) - 0.055);
-      }else{
-          return c_linear * 12.92;
-      }
+  float result;
+   
+  if(colorspace_gamma == 0.0){
+    if(c_linear > 0.0031308){
+      result = (1.055 * pow(c_linear, 1.0/2.4) - 0.055);
+    }else{
+      result = c_linear * 12.92;
+    }
+  }else{
+      result = pow(c_linear,1.0/colorspace_gamma);
+  }
+  return result;
 }
 
 /* Convert from rgb to XYZ colorspac//e */
@@ -254,7 +266,9 @@ void Lab2rgb(const color_Lab *lab, color_rgb *rgb){
 void init_colorspace(struct chrominance *chrm){
   /* Set defaults to D65 whitepoint if no chrominance data. */
   int i;
+  
   if(chrm == NULL){
+    colorspace_gamma = 0.0;
     colorspace_wp.X = d65.X;
     colorspace_wp.Y = d65.Y;
     colorspace_wp.Z = d65.Z;
@@ -264,7 +278,10 @@ void init_colorspace(struct chrominance *chrm){
       colorspace_m_rgb2XYZ[i] = m_D65_rgb2XYZ[i];
     }
 
-  }else{   
+  }else{
+      if(chrm->gamma != 0.0){
+          colorspace_gamma = chrm->gamma;
+      }   
       wp_from_chrominance(chrm,&colorspace_wp);  
       xyz2rgb_matrix(chrm, colorspace_m_XYZ2rgb);  
       rgb2xyz_matrix(chrm, colorspace_m_rgb2XYZ);

@@ -20,8 +20,7 @@ void init_network(unsigned char *thepic, unsigned int len, unsigned int colours,
     if(network = malloc(nq_pixel * netsize) == NULL){
         PNGNQ_ERROR("Out of memory error.");
     } 
-    
-    init_gamma_correction(gamma_correction);
+     
     
     for (i=0; i<netsize; i++) {
         network[i].b = network[i].g = network[i].r = gamma(i*256/netsize);

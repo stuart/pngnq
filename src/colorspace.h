@@ -21,7 +21,7 @@ typedef struct {
   float L,a,b;
 } color_Lab;
 
-/* Chrominance  from cHRM chunk */
+/* Chrominance  from cHRM and gAMA chunks */
 struct chrominance{
     float w_x;
     float w_y;
@@ -31,6 +31,7 @@ struct chrominance{
     float g_y;
     float b_x;
     float b_y;
+    float gamma;
 };
 
 /* Initialize the color space with a chrominance structure 
