@@ -19,3 +19,5 @@ src/stamp-h1
 src/pngcomp
 src/pngnq
 a.out
+test/.deps
+test/test
