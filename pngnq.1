@@ -5,56 +5,57 @@
 .SH NAME
 pngnq \- quantize png images
 .SH SYNOPSIS
-.B pngnq [-vfhV][-s 
+.B pngnq [-vfhV][-s
 .I sample_factor
-.B ][-Q 
+.B ][-Q
 .I dither
 .B ][-g
 .I gamma
-.B ][-e 
-.I extension 
-.B ][-d 
+.B ][-e
+.I extension
+.B ][-d
 .I dir
-.B ][-n 
+.B ][-n
 .I colors
 .B ][
 .I inputfiles
 .B ]
 .SH DESCRIPTION
 .B pngnq
-Quantizes a 32-bit RGBA PNG image to an 8 bit RGBA palette PNG 
-using the neuquant algorithm. The output file name is the 
-input file name extended with "-nq8.png" or a specified extension.
+quantizes a 32-bit RGBA PNG image to an 8 bit RGBA palette PNG
+using the neuquant algorithm. The output file name is the
+input file name extended with "\-nq8.png" or a specified extension.
+
+The "input files" defaults to standard input if not specified. If
+standard input is being processed the output is sent to standard
+output.
 
 .SH OPTIONS
-.IP -v
-Verbose mode. Prints status messages.
+.IP "-d dir"
+Tells pngnq to put output files in a directory other than the one the input files
+are in.
+.IP "-e extension"
+Specifies the new filename extension. Defaults to "\-nq8.png".
+Pngnq drops .png from the original filenames. If you set the argument of the \-e option
+to .png and choose the \-f option the input file will be overwritten.
 .IP -f
-Force ovewriting of files.
-.IP "-s sample factor"
-Sample factor. The neuquant algorithm samples pixels stepping by this value.
-The default value of 3 gives good results. Higher values sample less 
-of the image pixels and thus are faster but less accurate. A factor of 1 samples
-every image pixel. 
-.IP "-n colors"
-Specifies the number of colors to quantize to. Defaults to 256 which is the maximum.
-The minimum here is 2. 
-.IP "-Q dither"
-Choose a dithering method: n = no dither (default), f = Floyd Steinberg dithering.
+Force overwriting of files.
 .IP "-g gamma"
 Set the image gamma correction. If not present, uses the png file's gamma or defaults to 1.0.
-.IP "-e extension"
-Specifies the new filename extension. Defaults to "-nq8.png". 
-Pngnq drops .png from the original filenames. If you set the argument of the -e option
-to .png and choose the -f option the input file will be overwritten. 
-.IP "-d dir"
-Tells pngnq to put output files in a directory other than the one the input files 
-are in. 
-.IP "input files"
-The png files to be processed. Defaults to standard input if not specified.
-If standard input is being processed the output is sent to standard output. 
 .IP -h
 Print program help.
+.IP "-n colors"
+Specifies the number of colors to quantize to. Defaults to 256 which is the maximum.
+The minimum here is 2.
+.IP "-Q dither"
+Choose a dithering method: n = no dither (default), f = Floyd Steinberg dithering.
+.IP "-s sample factor"
+Sample factor. The neuquant algorithm samples pixels stepping by this value.
+The default value of 3 gives good results. Higher values sample less
+of the image pixels and thus are faster but less accurate. A factor of 1 samples
+every image pixel.
+.IP -v
+Verbose mode. Prints status messages.
 .IP -V
 Print version number and library versions.
 
