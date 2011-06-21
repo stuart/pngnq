@@ -11,5 +11,5 @@ void all_tests( void )
 
 int main( int argc, char** argv )
 {       
-    return run_tests(all_tests);
+    return(run_tests(all_tests) == 1 ? EXIT_SUCCESS : EXIT_FAILURE);
 }
