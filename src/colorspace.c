@@ -25,7 +25,7 @@ const matrix_3 m_D65_XYZ2rgb ={ 3.2404542, -1.5371385, -0.4985314,
                                -0.9692660,  1.8760108,  0.0415560,
                                 0.0556434, -0.2040259,  1.0572252};
 
-static color_XYZ d65 = {0.94810,1.0000,1.07305};
+static color_XYZ d65 = {0.95047, 1.00, 1.08883};
 static color_XYZ d00 = {0.0, 0.0, 0.0};
                           	              
 /* White point in XYZ space from chrominance data */
@@ -38,7 +38,9 @@ void wp_from_chrominance(struct chrominance *chrm, color_XYZ *wp){
 /* Get a matrix for conversion from linear rgb to XYZ color space */
 void rgb2xyz_matrix(struct chrominance *chrm, matrix_3 M){
     matrix_3 n, s;
-    color_XYZ *wp;
+    
+    color_XYZ *wp = &colorspace_wp;
+    
     matrix_3 a = { chrm->r_x/chrm->r_y, chrm->g_x/chrm->g_y, chrm->b_x/chrm->b_y,
                   1.0, 1.0, 1.0,
                   (1-chrm->r_x-chrm->r_y)/chrm->r_y,
@@ -46,7 +48,6 @@ void rgb2xyz_matrix(struct chrominance *chrm, matrix_3 M){
                   (1-chrm->b_x-chrm->b_y)/chrm->b_y};
     
     m3_invert(a,n);
-    wp_from_chrominance(chrm,wp);
     
     /* S matrix (diagonal) */
     s[0] = n[0]*wp->X+n[1]*wp->Y+n[2]*wp->Z;
@@ -91,7 +92,6 @@ float c_srgb(float c_linear){
 void rgb2XYZ(const color_rgb *rgb, color_XYZ *xyz)
 {
   double r,g,b;
-  
   r = c_linear((float)rgb->r/255.0);
   g = c_linear((float)rgb->g/255.0);
   b = c_linear((float)rgb->b/255.0);
@@ -124,6 +124,9 @@ void XYZ2LUV(const color_XYZ *xyz, color_LUV *luv)
   const float e = 216.0/24389.0;
   const float k = 24389.0/27.0;
   
+  if(xyz->Y == 0.0){
+      
+  }
   /* Reference white point */ 
   color_XYZ *wp = &colorspace_wp;
   
@@ -140,10 +143,19 @@ void XYZ2LUV(const color_XYZ *xyz, color_LUV *luv)
   }else{
     luv->L = k*yref;
   }
-
-  luv->U = 13.0*luv->L*(u-uref);
-  luv->V = 13.0*luv->L*(v-vref);
-
+  
+  if(isnan(u)){
+      /* catch the case where X=Y=Z=0 */
+      luv->U = 0.0;
+  }else{
+      luv->U = 13.0*luv->L*(u-uref); 
+  }
+  
+  if(isnan(v)){
+      luv->V = 0.0;
+  }else{ 
+    luv->V = 13.0*luv->L*(v-vref);
+  }
 }
 
 void LUV2XYZ(const color_LUV *luv, color_XYZ *xyz){
@@ -157,8 +169,8 @@ void LUV2XYZ(const color_LUV *luv, color_XYZ *xyz){
     /* Reference white point */ 
     color_XYZ *wp = &colorspace_wp;
     
-    uref = 4.0 * wp->X/(wp->X + 15.0 * wp->Y + 3.0 * wp->Z);
-    vref = 9.0 * wp->Y/(wp->X + 15.0 * wp->Y + 3.0 * wp->Z);   
+    uref = (4.0 * wp->X)/(wp->X + 15.0 * wp->Y + 3.0 * wp->Z);
+    vref = (9.0 * wp->Y)/(wp->X + 15.0 * wp->Y + 3.0 * wp->Z);   
     
     if(luv->L > k*e){
         xyz->Y = pow((luv->L+16.0)/116.0,3);
@@ -171,7 +183,7 @@ void LUV2XYZ(const color_LUV *luv, color_XYZ *xyz){
     c = -1.0/3.0;
     d = xyz->Y * ((39.0*luv->L)/(luv->V + 13.0 * luv->L * vref)-5.0);
     xyz->X = (d-b)/(a-c);
-    xyz->Z = xyz->X * a + c;
+    xyz->Z = xyz->X * a + b;
     
 }
 
@@ -225,17 +237,19 @@ void init_colorspace(struct chrominance *chrm){
   /* Set defaults to D65 whitepoint if no chrominance data. */
   int i;
   if(chrm == NULL){
+    colorspace_wp.X = d65.X;
+    colorspace_wp.Y = d65.Y;
+    colorspace_wp.Z = d65.Z;
+    
     for(i=0; i<9; i++){
       colorspace_m_XYZ2rgb[i] = m_D65_XYZ2rgb[i];
       colorspace_m_rgb2XYZ[i] = m_D65_rgb2XYZ[i];
     }
-    colorspace_wp.X = d65.X;
-    colorspace_wp.Y = d65.Y;
-    colorspace_wp.Z = d65.Z; 
-  }else{
+
+  }else{   
+      wp_from_chrominance(chrm,&colorspace_wp);  
       xyz2rgb_matrix(chrm, colorspace_m_XYZ2rgb);  
       rgb2xyz_matrix(chrm, colorspace_m_rgb2XYZ);
-      wp_from_chrominance(chrm,&colorspace_wp);  
   }
   
   colorspace_initialized = 1; 
