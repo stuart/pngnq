@@ -184,6 +184,7 @@ int main(int argc, char** argv)
 
   err_image = imagediff(file1_name,file2_name);
   block_err_image = block_imagediff(file1_name,file2_name,blocksize);
+  init_colorspace(NULL);
   if(err_image != NULL){
     struct statistics *stats = gather_stats(err_image);
     struct blockstats *bstats = gather_block_stats(err_image,blocksize);
@@ -411,8 +412,8 @@ float LUVerrval(pixel *p1, pixel *p2){
   r2.g = p2->g;
   r2.b = p2->b;
   
-  rgb2LUV(&r1,&c1,NULL);
-  rgb2LUV(&r2,&c2,NULL);
+  rgb2LUV(&r1,&c1);
+  rgb2LUV(&r2,&c2);
   long err;
  
   long err_L = c1.L-c2.L;
@@ -425,7 +426,7 @@ float LUVerrval(pixel *p1, pixel *p2){
 
 
 struct statistics *gather_stats(float *error_data){
-
+  
   int count;
   struct statistics *stats = malloc(sizeof(struct statistics));
   
