@@ -106,10 +106,10 @@ float c_srgb(float c){
 void rgb2XYZ(const color_rgb *rgb, color_XYZ *xyz)
 {
   double r,g,b;
-  r = c_linear((float)rgb->r/255.0);
-  g = c_linear((float)rgb->g/255.0);
-  b = c_linear((float)rgb->b/255.0);
-
+  r = c_linear(rgb->r/255.0);
+  g = c_linear(rgb->g/255.0);
+  b = c_linear(rgb->b/255.0);
+  
   xyz->X = colorspace_m_rgb2XYZ[0]*r + colorspace_m_rgb2XYZ[1]*g + colorspace_m_rgb2XYZ[2]*b;
   xyz->Y = colorspace_m_rgb2XYZ[3]*r + colorspace_m_rgb2XYZ[4]*g + colorspace_m_rgb2XYZ[5]*b;
   xyz->Z = colorspace_m_rgb2XYZ[6]*r + colorspace_m_rgb2XYZ[7]*g + colorspace_m_rgb2XYZ[8]*b;

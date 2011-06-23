@@ -160,13 +160,15 @@ void test_using_chrominance(){
     chrm.b_y = 0.0600;
     chrm.w_x = 0.3127;
     chrm.w_y = 0.3290;
-    chrm.gamma = 22;
+    chrm.gamma = 2.2;
     
     init_colorspace(&chrm);
     conversion_test_rgb2XYZ(0,0,0,0.0,0.0,0.0);
     conversion_test_rgb2XYZ(255,255,255,0.950456, 1.000000, 1.089058);
     conversion_test_rgb2XYZ(255,0,0,0.5766,0.2973,0.027);
-    
+    conversion_test_rgb2XYZ(128,64,32,0.1375,0.0961,0.0196);
+    conversion_test_rgb2XYZ(20,64,250,0.1912,0.1031,0.9525);
+
 }
 
 void test_colorspace( void )
