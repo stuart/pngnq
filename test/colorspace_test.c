@@ -9,6 +9,7 @@
 #define delta_luv 0.0001
 #define delta_lab 0.0001
 
+
 void conversion_test_rgb2XYZ(unsigned char r,unsigned char g,unsigned char b,float X,float Y,float Z){  
     color_rgb rgb; 
     color_XYZ xyz;
@@ -43,20 +44,20 @@ int test_rgb2xyz(){
     
     /* Test that the function inverts correctly */
     color_rgb rgb, rgb2; 
-    color_XYZ xyz;
-    for(rgb.r=0;rgb.r<255;rgb.r+=1){
-       for(rgb.g=0;rgb.g<255;rgb.g+=1){  
-         for(rgb.b=0;rgb.b<255;rgb.b+=1){ 
-            rgb2XYZ(&rgb,&xyz);
-            XYZ2rgb(&xyz,&rgb2);
-            assert_int_equal(rgb.r,rgb2.r);
-            assert_int_equal(rgb.g,rgb2.g);
-            assert_int_equal(rgb.b,rgb2.b);
-         }
-      }
-      printf("."); fflush(stdout);
-    } 
-    printf("\n");
+        color_XYZ xyz;
+        for(rgb.r=0;rgb.r<255;rgb.r+=1){
+           for(rgb.g=0;rgb.g<255;rgb.g+=1){  
+             for(rgb.b=0;rgb.b<255;rgb.b+=1){ 
+                rgb2XYZ(&rgb,&xyz);
+                XYZ2rgb(&xyz,&rgb2);
+                assert_int_equal(rgb.r,rgb2.r);
+                assert_int_equal(rgb.g,rgb2.g);
+                assert_int_equal(rgb.b,rgb2.b);
+             }
+          }
+          printf("."); fflush(stdout);
+        } 
+        printf("\n");                 
 };
 
 void conversion_test_rgb2LUV(unsigned char r,unsigned char g,unsigned char b,float L,float U,float V){
@@ -122,10 +123,10 @@ void test_rgb2Lab(){
     /* Test some sample colors */
     conversion_test_rgb2Lab(0,0,0,0.0,0.0,0.0);
     conversion_test_rgb2Lab(255,255,255,100.0,0.0,0.0);
-    //conversion_test_rgb2Lab(255,0,0,53.240789,175.01499,37.756412);
-    //conversion_test_rgb2Lab(0,255,0,87.734720,-83.077561,107.398533);
-    //conversion_test_rgb2Lab(0,0,255,32.297009,-9.405405,-130.342344);
-    //conversion_test_rgb2Lab(128,128,128,53.585013,0.0,0.0);
+    conversion_test_rgb2Lab(255,0,0,53.240789,175.01499,37.756412);
+    conversion_test_rgb2Lab(0,255,0,87.734720,-83.077561,107.398533);
+    conversion_test_rgb2Lab(0,0,255,32.297009,-9.405405,-130.342344);
+    conversion_test_rgb2Lab(128,128,128,53.585013,0.0,0.0);
     
     /* Test that the function inverts correctly */
     color_rgb rgb, rgb2; 
@@ -146,14 +147,36 @@ void test_rgb2Lab(){
     printf("\n");
     
 }
+
+void test_using_chrominance(){
+    struct chrominance chrm;
+    
+    // Setup chrominance with Adobe color space
+    chrm.r_x = 0.6400;
+    chrm.r_y = 0.3300;
+    chrm.g_x = 0.2100;
+    chrm.g_y = 0.7100;
+    chrm.b_x = 0.1500;
+    chrm.b_y = 0.0600;
+    chrm.w_x = 0.3127;
+    chrm.w_y = 0.3290;
+    chrm.gamma = 22;
+    
+    init_colorspace(&chrm);
+    conversion_test_rgb2XYZ(0,0,0,0.0,0.0,0.0);
+    conversion_test_rgb2XYZ(255,255,255,0.950456, 1.000000, 1.089058);
+    conversion_test_rgb2XYZ(255,0,0,0.5766,0.2973,0.027);
+    
+}
+
 void test_colorspace( void )
 {
 	test_fixture_start();
-	init_colorspace(NULL);      
-	run_test(test_rgb2xyz);
-    run_test(test_rgb2Lab);
-    run_test(test_rgb2LUV);
-    
+	//init_colorspace(NULL);      
+	//run_test(test_rgb2xyz);
+   // run_test(test_rgb2Lab);
+    //run_test(test_rgb2LUV);
+    run_test(test_using_chrominance);
 	test_fixture_end();       
 }
 

@@ -9,6 +9,7 @@
 #include "math.h"
 
 #define round(x) ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
+
 static const double e = 216.0/24389.0;
 static const double k = 24389.0/27.0;
 
@@ -18,7 +19,7 @@ static matrix_3 colorspace_m_XYZ2rgb;
 static color_XYZ colorspace_wp;
 static float colorspace_gamma;
 static int colorspace_initialized;
-
+ 
 /* Standard D65 conversions */
 const matrix_3 m_D65_rgb2XYZ ={ 0.4124564,  0.3575761,  0.1804375,
                                 0.2126729,  0.7151522,  0.0721750,
@@ -36,10 +37,12 @@ void wp_from_chrominance(struct chrominance *chrm, color_XYZ *wp){
    wp->X = chrm->w_x/chrm->w_y;
    wp->Y = 1.0;
    wp->Z = (1 - chrm->w_x - chrm->w_y)/chrm->w_y;
+   printf("Whitepoint: %f %f %f\n",wp->X,wp->Y,wp->Z);
 }
 
-/* Get a matrix for conversion from linear rgb to XYZ color space */
-void rgb2xyz_matrix(struct chrominance *chrm, matrix_3 M){
+/* Sets the matrices for conversion.
+/* Get a matrix for conversion from linear rgb to XYZ color space and vice versa */
+void init_matrices(struct chrominance *chrm, matrix_3 M, matrix_3 N){
     matrix_3 n, s;
     
     color_XYZ *wp = &colorspace_wp;
@@ -53,50 +56,47 @@ void rgb2xyz_matrix(struct chrominance *chrm, matrix_3 M){
     m3_invert(a,n);
     
     /* S matrix (diagonal) */
-    s[0] = n[0]*wp->X+n[1]*wp->Y+n[2]*wp->Z;
-    s[4] = n[3]*wp->X+n[4]*wp->Y+n[5]*wp->Z;
-    s[8] = n[6]*wp->X+n[7]*wp->Y+n[8]*wp->Z;
+    s[0] = n[0]*wp->X + n[1]*wp->Y + n[2]*wp->Z;
+    s[1] = s[2] = s[3] = 0.0;
+    s[4] = n[3]*wp->X + n[4]*wp->Y + n[5]*wp->Z;
+    s[5] = s[6] = s[7] = 0.0;
+    s[8] = n[6]*wp->X + n[7]*wp->Y + n[8]*wp->Z;
     
-    m3_multiply(s,a,M);
+    m3_multiply(a,s,M); 
+    m3_invert(M,N);  
+    
+    printf("rgb2XYZ matrix:\n %f\t%f\t%f\n%f\t%f\t%f\n%f\t%f\t%f\n",M[0],M[1],M[2],M[3],M[4],M[5],M[6],M[7],M[8]);
+    printf("XYZ2rgb matrix:\n %f\t%f\t%f\n%f\t%f\t%f\n%f\t%f\t%f\n",N[0],N[1],N[2],N[3],N[4],N[5],N[6],N[7],N[8]);
+    
 }
 
-/* Get a matrix for conversion from XYZ to linear rgb space 
-   We simply invert the rgvb2XYZ matrix.
-*/
-void xyz2rgb_matrix(struct chrominance *chrm, matrix_3 M){
-    matrix_3 temp;
-
-    rgb2xyz_matrix(chrm, temp);
-    m3_invert(temp,M);
-}
-
-/* linearize rgb values into srgb values or with gamma */
-float c_linear(float c_srgb){
+/* linearize rgb values into srgb values or with gamma. */
+float c_linear(float c){
    float result;
    if(colorspace_gamma == 0.0){
-     if(c_srgb > 0.0405){
-       result = pow(((c_srgb + 0.055)/1.055),2.4);
+     if(c > 0.0405){
+       result = pow(((c + 0.055)/1.055),2.4);
      }else{
-       result = c_srgb/12.92;
+       result = c/12.92;
      } 
    }else{
-       result = pow(c_srgb,colorspace_gamma);
+       result = pow(c,colorspace_gamma);
    }
    return result;  
 }
 
-/* de-linearize srgb values or with gamma */
-float c_srgb(float c_linear){
+/* de-linearize srgb values or use gamma. */
+float c_srgb(float c){
   float result;
    
   if(colorspace_gamma == 0.0){
-    if(c_linear > 0.0031308){
-      result = (1.055 * pow(c_linear, 1.0/2.4) - 0.055);
+    if(c > 0.0031308){
+      result = (1.055 * pow(c, 1.0/2.4) - 0.055);
     }else{
-      result = c_linear * 12.92;
+      result = c * 12.92;
     }
   }else{
-      result = pow(c_linear,1.0/colorspace_gamma);
+      result = pow(c,1.0/colorspace_gamma);
   }
   return result;
 }
@@ -283,8 +283,7 @@ void init_colorspace(struct chrominance *chrm){
           colorspace_gamma = chrm->gamma;
       }   
       wp_from_chrominance(chrm,&colorspace_wp);  
-      xyz2rgb_matrix(chrm, colorspace_m_XYZ2rgb);  
-      rgb2xyz_matrix(chrm, colorspace_m_rgb2XYZ);
+      init_matrices(chrm, colorspace_m_rgb2XYZ,colorspace_m_XYZ2rgb);
   }
   
   colorspace_initialized = 1; 
