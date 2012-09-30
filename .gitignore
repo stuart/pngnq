@@ -23,3 +23,4 @@ test/.deps
 test/test
 aclocal.m4
 src/config.h.in
+src/config.h.in~
